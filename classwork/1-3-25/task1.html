@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get" enctype="multipart/form-data">
+        <label for="">NAME</label>
+        <input type="text" placeholder="YOUR NAME" readonly>
+        <br>
+        <label for="">MOBILE NUMBER</label>
+        <input type="tel" placeholder="YOUR NUMBER" required pattern="[0-9]{10}" maxlength="10">
+        <br>
+        <label for="">password</label>
+        <input type="text" placeholder="your password" pattern="[A-Z][a-z0-9]{8,12}" minlength="8" maxlength="12">
+        <br>
+        <select name="" id="">
+            <option value="" hidden>---select city---</option>
+            <option value="" selected>vadodara</option>
+            <option value="">Nadiad</option>
+        
+        </select>
+        <button type="submit">SUBMIT</button>
+
+    </form>
+</body>
+</html>
