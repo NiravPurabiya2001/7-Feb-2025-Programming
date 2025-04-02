@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li::first-letter{
+            background-color: blue;
+        }
+        ul li::before{
+            content: "AA";
+        }
+        ul li::after{
+            content: "BB";
+        }
+        p::first-line{
+            background-color: aqua;
+        }
+
+        p::selection{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </ul>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, ratione obcaecati architecto sunt officia alias unde beatae quae dolorum quisquam saepe soluta laudantium reiciendis, sit, odio delectus perspiciatis minus excepturi Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error reiciendis excepturi praesentium ex dolor. Recusandae odio possimus deleniti. Possimus praesentium consequatur doloribus ab vitae iusto sed ad vel architecto blanditiis!</p>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        ul li:first-child{
+            background-color: aqua;
+
+        }
+        ul li:last-child{
+            background-color: red;
+
+        }
+        ul li:nth-child(3){
+            background-color: blueviolet;
+        }
+        ul li:nth-child(odd){
+            background-color: brown;
+        }
+        ul li:nth-child(even){
+            background-color: coral;
+        }
+        
+            
+        ul li:nth-last-child(2){
+            background-color: aquamarine;
+        }
+
+        .one:focus{
+            margin: 30px;
+            background-color: aqua;
+            border: 3px solid red;
+        }
+
+
+        .two{
+            margin: 50px;
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+        .two:hover{
+            background-color: brown;
+            clip-path: circle(50%);
+            transform:translate(100%,100%);
+            transition: 4s;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+    </ul>
+
+    <input type="text" placeholder="enter name" class="one">
+
+    <div class="two">
+
+    </div>
+
+    
+</body>
+</html>

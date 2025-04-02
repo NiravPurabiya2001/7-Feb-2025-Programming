@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .main{
+            height:410px;
+            width: 100%;
+           background-color:black;
+          display: flex;
+            
+            
+        }
+        .div1{
+            height: 370px;
+            width: 300px;
+            border: 2px solid;
+            margin-top: 20px;
+            margin-left: 10px;
+            padding-left: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 20px;
+            padding-left: 30px;
+            background-color: blueviolet;
+           
+        }
+        .boat{
+            height: 130px;
+            width: 120px;
+            
+            font-size: 13px;
+            text-align: left;
+        }
+        .boat img{
+            height: 80px;
+            width: 120px;
+
+        }
+        .boult{
+            height:130px;
+            width: 120px;
+            
+            font-size: 13px;
+            transform: translate(130%,-100%);
+
+        }
+        .boult img{
+            height:80px;
+            width: 120px;
+        }
+        .noise{
+            height:130px;
+            width: 120px;
+            
+            transform: translate(0%,-100%);
+            font-size: 13px;
+        }
+        .noise img{
+            height:80px;
+            width: 120px;
+        }
+        .zeb{
+            height:130px;
+            width: 120px;
+           
+            
+            transform: translate(125%,-200%);
+            font-size: 13px;
+        }
+        .zeb img{
+            height:80px;
+            width: 120px;
+        }
+        .div2{
+            height: 370px;
+            width: 300px;
+            border: 2px solid;
+            margin-top: 20px;
+            margin-left: 10px;
+            padding-left: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 20px;
+            padding-left: 30px;
+            margin-left: 40px;
+            background-color: brown;
+          
+            
+        }
+        .clean{
+            height: 130px;
+            width: 120px;
+            transform:translate();
+            
+            font-size: 13px;
+            text-align: left;
+        }
+        .clean img{
+            height:80px;
+            width: 120px;
+
+        }
+        
+        .div3{
+            height: 370px;
+            width: 300px;
+            border: 2px solid;
+            margin-top: 20px;
+            margin-left: 10px;
+            padding-left: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 20px;
+            padding-left: 30px;
+            margin-left: 40px;
+            background-color: lightcoral;
+            
+        }
+        .bedsheet{
+            height: 130px;
+            width: 120px;
+            
+            font-size: 13px;
+
+        }
+        .bedsheet img{
+            height:80px;
+            width: 120px;
+        }
+        .curtain{
+            height: 130px;
+            width: 120px;
+            
+            font-size: 13px;
+            transform: translate(125%,-100%);
+        }
+        .curtain img{
+            height:80px;
+            width: 120px;
+
+        }
+        .iron{
+            
+            height: 130px;
+            width: 120px;
+            transform: translate(0%,-100%);
+            
+            font-size: 13px;
+           
+        }
+        .iron img{
+            height:80px;
+            width: 120px;
+
+        }
+        .decor{
+            
+            height: 130px;
+            width: 120px;
+            transform: translate(120%,-200%);
+            
+            font-size: 13px;
+           
+        }
+        .decor img{
+            height:80px;
+            width: 120px;
+
+        }
+        .womenclothing{
+            font-size: 13px;
+        }
+        .womenclothing img{
+            height:80px;
+            width: 120px;
+
+        }
+        
+        .footwear{
+            transform: translate(50%,-120%);
+            font-size: 13px;
+            
+        }
+        .footwear img{
+            height:80px;
+            width: 120px;
+
+        }
+        .Watches{
+            transform: translate(0%,-100%);
+            font-size: 13px;
+        }
+        .Watches img{
+            height:80px;
+            width: 120px;
+        }
+        .jewellery{
+            font-size: 13px;
+            transform: translate(50%,-210%);
+        }
+        .jewellery img{
+            height:80px;
+            width: 120px;
+        }
+        .div4{
+            height: 370px;
+            width: 300px;
+            border: 2px solid;
+            margin-top: 20px;
+            margin-left: 10px;
+            padding-left: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 20px;
+            padding-left: 30px;
+            margin-left: 40px;
+            background-color:lightgreen;
+            
+        }
+       .div1:hover{
+        background-color: whitesmoke;
+        height: 400px;
+        width: 320px;
+        
+       
+        transition: 0.3s;
+       }
+       .div2:hover{
+        background-color: whitesmoke;
+        height: 400px;
+        width: 320px;
+        transition: 0.3s;
+       }
+       .div3:hover{
+        background-color: whitesmoke;
+        height: 400px;
+        width: 320px;
+        transition: 0.3s;
+       }
+       .div4:hover{
+        background-color: whitesmoke;
+        height: 400px;
+        width: 320px;
+        transition: 0.3s;
+       }
+       .boat:hover img{
+        height: 90px;
+        width: 140px;
+        
+       }
+       .boult:hover img{
+        height: 90px;
+        width: 140px;
+        
+
+       }
+       .noise:hover img{
+        height: 90px;
+        width: 140px;
+        
+
+       }
+       .zeb:hover img{
+        height: 90px;
+        width: 140px;
+        
+
+       }
+       .bedsheet:hover img{
+        height: 85px;
+        width: 140px;
+
+       }
+       .curtain:hover img{
+        height: 90px;
+        width: 140px;
+
+       }
+       .iron:hover img{
+        height: 90px;
+        width: 140px;
+
+       }
+       .decor:hover img{
+        height: 90px;
+        width: 140px;
+
+       }
+       .womenclothing:hover img{
+
+        height: 90px;
+        width: 140px;
+       }
+       .footwear:hover img{
+        height: 90px;
+        width: 140px;
+
+       }
+       .Watches:hover img{
+        height: 90px;
+        width: 140px;
+
+       }
+       .jewellery:hover img{
+        height: 90px;
+        width: 140px;
+
+       }
+       .tyre{
+            height:130px;
+            width: 120px;
+            
+            font-size: 13px;
+            transform: translate(130%,-100%);
+
+        }
+        .tyre img{
+            height:80px;
+            width: 120px;
+        }
+        .helmet{
+            height:130px;
+            width: 120px;
+            
+            transform: translate(0%,-100%);
+            font-size: 13px;
+        }
+        .helmet img{
+            height:80px;
+            width: 120px;
+        }
+        .vaccum{
+            height:130px;
+            width: 120px;
+           
+            
+            transform: translate(125%,-200%);
+            font-size: 13px;
+        }
+        .vaccum img{
+            height:80px;
+            width: 120px;
+        }
+        .tyre:hover img{
+            height: 90px;
+        width: 140px;
+
+
+        }
+        .helmet:hover img{
+            height: 90px;
+        width: 140px;
+
+        }
+        .vaccum:hover img{
+            height: 90px;
+        width: 140px;
+
+        }
+        
+     
+        
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="div1">
+        <h3>Starting ₹149 |</h3>
+        <h3>Headphones</h3>
+        <div class="boat">
+            <a href="https://www.boat-lifestyle.com/"><img src="/1-4-25/boatt.jpg" alt=""></a>
+            <p>Starting ₹249|boAt</p>
+        </div>
+        <div class="boult">
+            <img src="/1-4-25/boult.png" alt="">
+            <p>Starting ₹349|boult </p>
+
+        </div>
+        <div class="noise">
+            <img src="/1-4-25/noisee.jpg" alt="">
+            <p>Starting  ₹649|Noise </p>
+
+        </div>
+        <div class="zeb">
+            <img src="/1-4-25/zeb.jpg" alt="">
+            <p>Starting  ₹149|Zebronics</p>
+        </div>
+
+    </div>
+    <div class="div2">
+        <h3>Automotive essentials|</h3>
+        <h3>Upto 60% off</h3>
+        
+        <div class="boat">
+            <img src="/1-4-25/cleaning.jpg" alt="">
+            <p>Cleaning iteam</p>
+        </div>
+        <div class="tyre">
+            <img src="/1-4-25/tyre.jpg" alt="">
+            <p>Tyre and rim care </p>
+
+        </div>
+        <div class="helmet">
+            <img src="/1-4-25/helmets.jpg" alt="">
+            <p>Helmets </p>
+
+        </div>
+        <div class="vaccum">
+            <img src="/1-4-25/vaccum.jpg" alt="">
+            <p>Vaccum cleaner</p>
+        </div>
+
+    </div>
+    <div class="div3">
+        <h3>Starting ₹199 | Amazon</h3>
+        <h3>Brands and more</h3>
+        
+        <div class="bedsheet">
+            <img src="/1-4-25/bedsheet.jpg" alt="">
+            <p>Starting ₹199|bedsheet</p>
+        </div>
+        <div class="curtain">
+            <img src="/1-4-25/curtain.jpg" alt="">
+            <p> Starting ₹199|Curtains</p>
+
+        </div>
+        <div class="iron">
+            <img src="/1-4-25/ironing board.jpg" alt="">
+            <p>minimum 50% off|on iron boards $ more</p>
+
+        </div>
+        <div class="decor">
+            <img src="/1-4-25/decor.jpg" alt="">
+            <p>Upto 60% off home decor</p>
+        </div>
+
+    </div>
+    <div class="div4">
+        <h3>Upto 60% off | Styles for</h3>
+        <h3>Women</h3>
+        
+        <div class="womenclothing">
+            <img src="/1-4-25/women clothing.jpg" alt="">
+            <p>Womens clothing</p>
+        </div>
+        <div class="footwear">
+            <img src="/1-4-25/footwear.jpg" alt="">
+            <p>footwear+handbags</p>
+
+        </div>
+        <div class="Watches">
+            <img src="/1-4-25/watches.jpg" alt="">
+            <p>Watches </p>
+
+        </div>
+        <div class="jewellery">
+            <img src="/1-4-25/jewellery.jpg" alt="">
+            <p>Fashion Jewellery</p>
+        </div>
+
+    </div>
+    
+</div>
+
+    
+
+</div>
+</body>
+</html>
