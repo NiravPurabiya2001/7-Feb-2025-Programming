@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        .main1 {
+            height: 100px;
+            width: 100%;
+
+            display: flex;
+            position: sticky;
+            top: 0px;
+            
+            
+            
+        }
+
+        .logo {
+            margin-top: 10px;
+
+            height: 75px;
+            width: 50%;
+
+        }
+
+        .logo img {
+            margin-left: 400px;
+            height: 75px;
+            width: 100px;
+            float: left;
+
+        }
+
+        .nav {
+            margin-top: 10px;
+            margin-right: 200px;
+
+            height: 75px;
+            width: 50%;
+
+        }
+
+        .nav ul li {
+            list-style: none;
+            display: inline;
+        }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 20px;
+            font-weight: 800;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .main2 {
+            height: 400px;
+            width: 100%;
+
+            background-image: url("/back3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .main3 {
+            margin-top: 10px;
+            height: 700px;
+            width: 100%;
+
+            display: flex;
+        }
+
+        .main3div1 {
+            margin: 50px auto;
+            height: 600px;
+            width: 600px;
+
+
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        .main3div1 h2 {
+            font-size: 37px;
+            font-weight: 400;
+            color: rgb(11, 117, 152);
+        }
+
+        .main3div1 p {
+            color: rgba(120, 116, 116, 0.9);
+
+        }
+
+        .brand {
+            margin-top: 20px;
+            margin-left: 30px;
+            height: 200px;
+            width: 200px;
+
+
+        }
+
+        .brandimg {
+            height: 60px;
+            width: 100%;
+
+            background: url("magnifier.png");
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            background-position: 50% 0%;
+        }
+
+        .brandcon {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+
+        }
+
+        .creative {
+            margin-top: 20px;
+            margin-left: 20px;
+            height: 200px;
+            width: 200px;
+
+            transform: translate(150%, -110%);
+        }
+
+        .creativeimg {
+            height: 60px;
+            width: 100%;
+
+            background: url("/diagram.png");
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            background-position: 50% 0%;
+
+        }
+
+        .creativecon {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+
+        }
+
+        .digital {
+            margin-top: 20px;
+            margin-left: 20px;
+            height: 200px;
+            width: 200px;
+
+            transform: translate(0%, -115%);
+        }
+
+        .digitalimg {
+            height: 60px;
+            width: 100%;
+
+            background: url("/chat.png");
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            background-position: 50% 0%;
+        }
+
+        .digitalcon {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .data {
+            margin-top: 20px;
+            margin-left: 20px;
+            height: 200px;
+            width: 200px;
+
+            transform: translate(150%, -225%);
+        }
+
+        .dataimg {
+            height: 60px;
+            width: 100%;
+
+            background: url("handshake.png");
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            background-position: 50% 0%;
+        }
+
+        .datacon {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+
+
+        .main3div2 {
+            margin-top: 48px;
+            margin-right: 300px;
+            height: 700px;
+            width: 400px;
+            /* border: 3px solid lightgray; */
+            box-shadow: 10px 10px 10px 10px lightgray;
+            box-shadow: -10px -10px 20px 10px lightgray;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .main3div2img {
+            height: 50%;
+            width: 100%;
+
+            background-image: url("/meetingg.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+
+        .main3div2 p {
+            color: rgba(120, 116, 116, 0.9);
+
+        }
+
+        .main3div2 h2 {
+            font-size: 37px;
+            font-weight: 400;
+            color: rgb(11, 117, 152);
+        }
+
+        .main3div2con button {
+            border-radius: 10px;
+        }
+
+        .main4 {
+            margin-top: 100px;
+            height: 150px;
+            width: 100%;
+            border: 2px solid;
+            font-size: 20px;
+            text-align: center;
+            padding: 30px;
+            background: url("back3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            color: white;
+        }
+
+        .main5 {
+            height: 200px;
+            width: 900px;
+
+            transform: translate(40%, -45%);
+            background-color: white;
+            display: flex;
+        }
+
+        .project {
+            height: 150px;
+            width: 200px;
+
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .project .num1 {
+            transform: translate(30%, 0%);
+        }
+
+        .project .project1 {
+            transform: translate(0%, -70%);
+        }
+
+        .satisfied {
+            height: 150px;
+            width: 200px;
+
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .satisfied .num2 {
+            transform: translate(30%, 0%);
+
+        }
+
+        .satisfied .satisfied1 {
+            transform: translate(0%, -70%);
+
+        }
+
+        .partner {
+            height: 150px;
+            width: 200px;
+
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .partner .num3 {
+            transform: translate(30%, 0%);
+
+
+        }
+
+        .partner .partner1 {
+            transform: translate(15%, -70%);
+
+        }
+
+        .years {
+            height: 150px;
+            width: 200px;
+
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .years .num4 {
+            transform: translate(30%, 0%);
+
+        }
+
+        .years .years1 {
+            transform: translate(0%, -70%);
+
+        }
+
+        .main6 {
+            height: 300px;
+            width: 600px;
+            
+            transform: translate(70%,-20%);
+        }
+
+        .row{
+            display: flex;
+        }
+        .main7{
+            display: flex;
+           
+            height: 350px;
+            width: 100%;
+            
+            
+           
+            
+        }
+        .main7 .branding {
+           
+            height: 300px;
+            width: 300px;
+            
+            transform: translate(70%,10%);
+            
+        }
+        .main7 .digital{
+          
+           
+            height: 300px;
+            width: 300px;
+           
+            transform: translate(80%,3%);
+        }
+        .main7 .content {
+            
+           
+            height: 300px;
+            width: 300px;
+            
+            transform: translate(97%,9.5%);
+        }  
+        .brandimgg{
+            height: 40%;
+            width: 100%;
+           
+            background: url("magnifier.png");
+            background-repeat: no-repeat;
+            background-size: 60px 70px;
+            background-position: 120px 30px;
+        } 
+        .brandingconn{
+            height: 60%;
+            width: 100%;
+            transform: translate(0%,-15%);
+           
+        }
+        .digitalimgg{
+            height: 40%;
+            width: 100%;
+           
+            background: url("/chat.png");
+            background-repeat: no-repeat;
+            background-size: 60px 70px;
+            background-position: 120px 30px;
+
+        }
+        .digitalconn{
+            height: 60%;
+            width: 100%;
+            transform: translate(0%,-15%);
+
+        }
+        .contentimgg{
+            height: 40%;
+            width: 100%;
+           
+            background: url("/handshake.png");
+            background-repeat: no-repeat;
+            background-size: 60px 70px;
+            background-position: 120px 30px;
+
+        }
+        .contentconn{
+            height: 60%;
+            width: 100%;
+            transform: translate(0%,-15%);
+        }
+        .main8{
+            margin-top: 30px;
+            height: 150px;
+            width: 100%;
+            
+            background: url("back3.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+            }
+
+        .main8 .div1{
+            margin-top: 10px;
+            height: 100px;
+            width: 50%;
+            margin-top: 35px;
+           
+            text-align: right;
+        }
+        .main8 .div2{
+            margin-top: 10px;
+            height: 100px;
+            width: 50%;
+           
+
+
+        }
+        .main8 .div2 button{
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+            color:rgb(9, 153, 201);
+            font-weight: 400;
+            margin: 40px 200px;
+        }
+        
+            
+           
+           
+         
+            
+        
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="main1">
+        <div class="logo">
+            <img src="/logo.png" alt="">
+            <h2>J.P MORGAN</h2>
+
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+        </div>
+
+
+    </div>
+    <div class="main2">
+
+    </div>
+    <div class="main3">
+        <div class="main3div1">
+            <h2>Our Main Features</h2>
+            <p>With a focus on innovation and quality, our features are constantly evolving to stay ahead and provide
+                you with the best possible solution.</p>
+            <div class="brand">
+                <div class="brandimg">
+
+                </div>
+                <div class="brandcon">
+                    <h3 style="color: rgb(36, 97, 118);">Brand Identity</h3>
+                    <p>We don't just design brands; we craft legacies that resonate, connect, and leave a lasting
+                        impression.</p>
+
+                </div>
+
+
+
+            </div>
+            <div class="creative">
+                <div class="creativeimg">
+
+                </div>
+                <div class="creativecon">
+                    <h3 style="color: rgb(36, 97, 118);">Creative Content</h3>
+                    <p>Words that inspire, captivate, and convert—our content brings your vision to life across every
+                        platform.</p>
+
+
+
+                </div>
+
+
+            </div>
+            <div class="digital">
+                <div class="digitalimg">
+
+                </div>
+                <div class="digitalcon">
+                    <h3 style="color: rgb(36, 97, 118);">Digital Presence</h3>
+                    <p>From SEO to social media, we amplify your voice, ensuring your story reaches the right audience
+                        at the right time.</p>
+
+                </div>
+            </div>
+            <div class="data">
+                <div class="dataimg">
+
+                </div>
+                <div class="datacon">
+                    <h3 style="color: rgb(36, 97, 118);">Data Insights</h3>
+                    <p>With our analytics, you gain clarity and confidence, turning data into smarter decisions for
+                        unstoppable growth.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="main3div2">
+            <div class="main3div2img">
+
+            </div>
+            <div class="main3div2con">
+                <h3 style="color: rgb(36, 97, 118);">Partner in Your Success</h3>
+                <p>Join the CreativeSphere Community
+
+                    At CreativeSphere Solutions, we’re more than a service provider—we’re your partner in building a
+                    brighter future. Our mission goes beyond crafting campaigns or writing words; we aim to create
+                    meaningful connections that drive lasting success. Guided by creativity, trust, and unwavering
+                    dedication, we work hand-in-hand with you to turn your vision into reality. Together, we’ll craft
+                    solutions that inspire, resonate, and make an impact. Let’s create something extraordinary and take
+                    your journey to the next level. Your success story starts here.</p>
+                <p><button type="button"
+                        style="font-size: larger; color:white; background-color:rgb(24, 140, 179);">Contact</button></p>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="main4">
+        <h1>You Always Get the Best Guidance</h1>
+
+    </div>
+    <div class="main5">
+        <div class="project">
+
+            <div class="num1">
+                <h2 style="font-size: 40px;color: rgb(18, 122, 157);">50</h2>
+
+            </div>
+            <div class="project1">
+                <p style="font-size: 23px;font-weight: 700;color: rgb(71, 51, 51);">Projects Completed</p>
+
+            </div>
+
+        </div>
+        <div class="satisfied">
+            <div class="num2">
+                <h2 style="font-size: 40px;color: rgb(18, 122, 157);">30</h2>
+
+            </div>
+            <div class="satisfied1">
+                <p style="font-size: 23px;font-weight: 700;color: rgb(71, 51, 51);">Satisfied Customers</p>
+
+            </div>
+
+        </div>
+        <div class="partner">
+            <div class="num3">
+                <h2 style="font-size: 40px;color: rgb(18, 122, 157);">10</h2>
+
+            </div>
+            <div class="partner1">
+                <p style="font-size: 23px;font-weight: 700;color: rgb(71, 51, 51);">Partnership</p>
+
+            </div>
+
+        </div>
+        <div class="years ">
+            <div class="num4">
+                <h2 style="font-size: 40px;color: rgb(18, 122, 157);">3</h2>
+
+            </div>
+            <div class="years1">
+                <p style="font-size: 23px;font-weight: 700;color: rgb(71, 51, 51); ">Years of experience</p>
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="main6">
+        <h2 style="text-align: center;font-size: 40px;color: rgb(21, 112, 142);">Our Best Services</h2>
+        <p style="text-align: center; font-size: 23px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Our commitment to excellence drives us to continuously improve, providing you with the best services to help
+            your business succeed.</p>
+
+    </div>
+    <div class="main7">
+        <div class="branding">
+            <div class="brandimgg">
+
+            </div>
+            <div class="brandingconn">
+                <h2 style="text-align: center;color: rgb(11, 118, 153);">Branding</h2>
+                <p style="font-size: 17px; font-weight: 600;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;color: rgb(93, 89, 89);">Your brand is more than just a logo or a catchy tagline it’s the very essence of who you are and what you stand for. At CreativeSphere Solutions, we believe that branding is the soul</p>
+
+            </div>
+
+        </div>
+        <div class="digital">
+            <div class="digitalimgg">
+
+            </div>
+            <div class="digitalconn">
+                <h2  style="text-align: center;color: rgb(11, 118, 153);">Digital Marketing</h2>
+                <p style="font-size: 17px; font-weight: 600;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;color: rgb(93, 89, 89);">In the digital age, standing out online is more important than ever.At CreativeSphere Solutions, we don’t just help you get noticed—we help you connect, engage, and build</p>
+
+            </div>
+
+        </div>
+        <div class="content">
+            <div class="contentimgg">
+
+            </div>
+            <div class="contentconn">
+                <h2 style="text-align: center;color: rgb(11, 118, 153);">Content Writing Services</h2>
+                <p style="font-size: 17px; font-weight: 600;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;color: rgb(93, 89, 89);">Words are powerful. They can persuade, inform, entertain, and inspire.At CreativeSphere Solutions, we offer a wide range of content writing services designed to help you communicate</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="main8">
+        <div class="div1">
+            <h1 style="color: white;font-weight: 600;">You Always Get the Best Guidance</h1>
+
+        </div>
+        <div class="div2">
+            <button type="submit">Book Consaltation</button>
+
+        </div>
+
+
+    </div>
+    <div class="main9">
+
+    </div>
+    
+</body>
+
+</html>

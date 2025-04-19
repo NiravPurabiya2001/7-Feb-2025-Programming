@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            display: grid;
+            /*1 grid-template-columns: 100px 300px; */
+            /* this makes grid like sturucture according to the size you have giving  and its number decides number 
+            of column and then it takes in new row. */
+            /* 2 grid-template-rows: 200px 200px 200px; */
+            /* this change the vertical size of the cell indiviually */
+            /* 3 grid-auto-rows: 200px;;
+            this change vertical size of each cell in one go */
+            /* 4 grid-template-columns: 1fr 1fr; */
+            /* this makes the columns size according to the screen fr stands for friction have to right 1fr again and again*/
+            /*5  grid-template-columns: repeat(4,1fr); */
+            /* this makes the columns size according to the screen fr stands for friction in one go */
+            /* 6 row-gap: 20px; for row gap
+            column-gap: 20px; for column gap */
+
+        }
+        .box{
+            border: 2px solid;
+          
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+    </div>
+</body>
+</html>
