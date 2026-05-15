@@ -1,0 +1,20 @@
+Module 1 - Foundation
+
+THEORY EXERCISE
+
+Q1. What is HTTP?
+Answer: HTTP stands for Hypertext Transfer Protocol. It's essentially the foundation of data communication on the World Wide Web. Think of it as the language that your web browser and the website's server use to talk to each other. When you enter a web address or click a link, your browser sends an HTTP request to the server, and the server responds with an HTTP response, which contains the web page data.
+
+Q2. What are Browsers? How do they work?
+Answer: A web browser (like Chrome, Firefox, or Safari) is a software application used to access and view websites. 
+How it works:
+1. When you type a URL, the browser finds the IP address of the server where the website lives.
+2. It sends an HTTP request to that server asking for the page content.
+3. The server sends back the HTML, CSS, and JavaScript files.
+4. The browser reads these files and renders (draws) the visual webpage on your screen so you can interact with it.
+
+Q3. What is a Domain Name?
+Answer: A domain name is the easy-to-remember address of a website (like google.com or facebook.com). Instead of having to memorize complex string of numbers (IP addresses) to reach a website, we use domain names. The Domain Name System (DNS) translates these human-readable names into the IP addresses that computers use to identify each other on the network.
+
+Q4. What is hosting?
+Answer: Web hosting is a service that allows you to post a website onto the Internet. When you buy hosting, you are basically renting space on a physical server (a powerful computer that runs 24/7) where you can store all the files and data necessary for your website to work properly. Whenever someone types your domain name into their browser, their computer connects to your host server, which then delivers your webpages to them.

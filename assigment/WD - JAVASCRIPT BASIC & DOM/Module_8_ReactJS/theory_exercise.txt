@@ -1,0 +1,68 @@
+Module 9 - Introduction to React.js (Labeled Module 8 in our folder structure)
+
+THEORY EXERCISE
+
+Q1. What is React.js? How is it different from other JavaScript frameworks?
+Answer: React.js is a popular, open-source JavaScript library developed by Facebook for building user interfaces, especially single-page applications. Unlike full-blown frameworks like Angular that dictate how everything should be built, React is just a library focused solely on the "View" layer of an application, making it highly flexible and component-based.
+
+Q2. Explain the virtual DOM and component-based architecture.
+Answer: 
+- Virtual DOM: React keeps a lightweight copy of the real DOM in memory (the Virtual DOM). When state changes, React updates the Virtual DOM first, compares it to the previous version (diffing), and then only updates the exact parts of the real DOM that changed. This makes React very fast.
+- Component-based architecture: React apps are built using small, isolated, reusable pieces of code called components (like a Header component, a Button component). This makes code easier to manage and scale.
+
+Q3. What is JSX?
+Answer: JSX stands for JavaScript XML. It is a syntax extension for React that allows you to write HTML-like code directly inside your JavaScript files. It makes writing React components much easier and more visual.
+
+Q4. Why use curly braces {} in JSX?
+Answer: Curly braces allow you to inject regular JavaScript expressions (like variables, math, or function calls) directly into the JSX markup. For example: `<h1>Hello, {userName}!</h1>`.
+
+Q5. Functional vs Class Components?
+Answer: 
+- Functional Components: Simple JavaScript functions that return JSX. Modern React primarily uses these along with Hooks.
+- Class Components: Older, ES6 classes that extend `React.Component`. They require a `render()` method to return JSX and historically were the only way to manage state before Hooks existed.
+
+Q6. What are props and state?
+Answer: 
+- Props (Properties): Read-only data passed down from a parent component to a child component. A child cannot modify its own props.
+- State: Local, mutable data managed within the component itself. When state changes, the component automatically re-renders to reflect the new data.
+
+Q7. How are events handled in React?
+Answer: React uses a cross-browser wrapper around native events called Synthetic Events. Event handlers are written in camelCase (e.g., `onClick`, `onChange`) rather than lowercase, and you pass a function as the event handler rather than a string.
+
+Q8. What is conditional rendering?
+Answer: It is the practice of showing different components or UI elements based on certain conditions (like checking if a user is logged in). You typically use the ternary operator (`condition ? true : false`) or logical AND (`condition && showThis`) in JSX.
+
+Q9. Why use keys in React lists?
+Answer: When rendering an array of elements (using `.map()`), React requires each item to have a unique `key` prop. Keys help React identify exactly which items have changed, been added, or been removed, making list updates fast and efficient.
+
+Q10. Controlled vs Uncontrolled components in forms?
+Answer: 
+- Controlled: Form data is handled by the React component's state. (e.g., an `<input>` whose value is linked to a `useState` variable).
+- Uncontrolled: Form data is handled directly by the DOM (using refs to pull the value when needed, like traditional HTML forms).
+
+Q11. What are lifecycle methods?
+Answer: In class components, lifecycle methods are special functions that run at specific times in a component's "life":
+- Mounting: `componentDidMount()` runs once when the component is first placed in the DOM. Good for API calls.
+- Updating: `componentDidUpdate()` runs when props or state change.
+- Unmounting: `componentWillUnmount()` runs right before the component is removed. Good for cleanup (clearing timers).
+
+Q12. What are React Hooks?
+Answer: Hooks are functions introduced in React 16.8 that let you "hook into" React state and lifecycle features inside functional components, completely eliminating the need for class components.
+- `useState`: Manages local state.
+- `useEffect`: Handles side effects (like API calls or timers).
+- `useContext`: Accesses the Context API.
+- `useReducer`: Manages complex state logic (similar to Redux).
+- `useRef`: Accesses a DOM element directly or stores a mutable value that doesn't trigger a re-render.
+- `useMemo` & `useCallback`: Performance optimizations (useMemo caches a computed value, useCallback caches a function definition).
+
+Q13. What is React Router?
+Answer: React Router is a standard library for routing in React. It enables navigation among different views in a single-page application without refreshing the whole webpage.
+
+Q14. What are RESTful web services and JSON-Server?
+Answer: RESTful services are APIs that follow REST architecture rules, typically exchanging data in JSON format over HTTP. `json-server` is a tool that lets you create a fake REST API locally very quickly using just a simple JSON file, perfect for testing React apps.
+
+Q15. What is the Context API?
+Answer: The Context API is a built-in React feature that allows you to share state globally across the entire app (or part of it) without having to manually pass props down through every single level of the component tree (prop drilling).
+
+Q16. What is Redux and Recoil?
+Answer: Both are state management libraries for complex apps. Redux uses a single central "store", "actions" (what to do), and "reducers" (how to do it). Recoil is a newer, simpler library created by Facebook that manages state via "atoms" (pieces of state) and "selectors" (derived state) that integrate very naturally with React Hooks.

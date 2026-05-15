@@ -1,0 +1,17 @@
+Module 6 - Frontend HTML5
+
+THEORY EXERCISE
+
+Q1. What is the difference between HTML and HTML5?
+Answer: HTML is the standard markup language for creating web pages, while HTML5 is the latest major version of HTML. The main differences are:
+- Multimedia support: HTML5 natively supports audio and video without needing external plugins like Flash.
+- Semantic Tags: HTML5 introduced new semantic tags (like <header>, <footer>, <article>) that make code easier to read and improve SEO.
+- Storage: HTML5 provides local storage (Web Storage) instead of relying solely on cookies, allowing apps to store data on the user's browser securely and efficiently.
+- Canvas & SVG: HTML5 supports drawing graphics directly on the page using <canvas> and <svg>.
+
+Q2. What are the additional tags used in HTML5?
+Answer: HTML5 introduced several new tags, mainly to improve document structure and support multimedia. Some key tags include:
+- Structure/Semantic tags: <header>, <footer>, <nav>, <section>, <article>, <aside>, <main>.
+- Multimedia tags: <audio>, <video>, <source>, <track>.
+- Graphics tags: <canvas>, <svg>.
+- Form elements: <datalist>, <output>, and new input types like date, email, url, and color.

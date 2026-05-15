@@ -1,0 +1,15 @@
+Module 1 - Lab Exercise
+
+Task: Create Github account & make repository.
+
+Steps to complete this task:
+1. Go to https://github.com/
+2. Click on the "Sign up" button at the top right corner.
+3. Enter your email address, create a strong password, and choose a unique username.
+4. Verify your account by solving the puzzle and clicking the verification link sent to your email.
+5. Once logged in, click the "+" icon at the top right and select "New repository".
+6. Give your repository a name (e.g., "frontend-assignments").
+7. Choose to make it Public or Private, and optionally check "Add a README file".
+8. Click "Create repository".
+
+Your GitHub account and first repository are now ready to store your project code!

@@ -1,0 +1,74 @@
+Module 5 - Frontend CSS
+
+THEORY EXERCISE
+
+Q1. What is a CSS selector? Provide examples of element, class, and ID selectors.
+Answer: A CSS selector is the part of a CSS rule that tells the browser which HTML elements to apply the styling to. 
+- Element Selector: Selects all elements of a certain type (e.g., `p { color: blue; }` styles all paragraphs).
+- Class Selector: Selects elements with a specific class attribute, prefixed by a dot (e.g., `.btn { background: red; }`).
+- ID Selector: Selects a single, unique element with a specific ID attribute, prefixed by a hash (e.g., `#header { height: 100px; }`).
+
+Q2. Explain the concept of CSS specificity. How do conflicts between multiple styles get resolved?
+Answer: CSS specificity is the set of rules browsers use to determine which style to apply when multiple conflicting styles point to the same element. It calculates a "weight" for each selector. An ID selector has a higher weight than a class selector, which in turn has a higher weight than an element selector. If the weights are equal, the style written last in the CSS file wins.
+
+Q3. What is the difference between internal, external, and inline CSS?
+Answer: 
+- Inline CSS: Written directly inside the HTML element using the `style` attribute. Pros: Quick for a single element. Cons: Clutters HTML and is hard to maintain.
+- Internal CSS: Written inside a `<style>` tag within the HTML document's `<head>`. Pros: Good for single-page styling. Cons: Cannot be easily reused across multiple pages.
+- External CSS: Written in a separate `.css` file and linked to the HTML file. Pros: Keeps HTML clean, caches well, and allows styling multiple pages from one place. Cons: Requires an extra HTTP request to load.
+
+Q4. Explain the CSS box model and its components.
+Answer: The CSS box model is a box that wraps around every HTML element. Its components (from inside out) are:
+- Content: The actual text or image inside the element.
+- Padding: Transparent space immediately surrounding the content. It increases the overall size of the element.
+- Border: A line that wraps around the padding and content.
+- Margin: Transparent space outside the border that pushes the element away from other elements. It does not affect the element's actual size, just its spacing from others.
+
+Q5. What is the difference between border-box and content-box box-sizing in CSS? Which is the default?
+Answer: 
+- `content-box` is the default. If you set a width of 100px, adding 20px padding makes the total width 140px (100 + 20 left + 20 right).
+- `border-box` includes padding and borders inside the specified width. If you set a width of 100px and 20px padding, the total width remains 100px (the content shrinks to make room for padding).
+
+Q6. What is CSS Flexbox, and how is it useful for layout design? Explain flex-container and flex-item.
+Answer: Flexbox is a layout module designed to easily align and distribute space among items in a container, even when their sizes are unknown. It is incredibly useful for responsive 1-dimensional layouts (rows or columns).
+- Flex-container: The parent element that has `display: flex;` applied to it.
+- Flex-item: The direct children of the flex-container, which get arranged by Flexbox rules.
+
+Q7. Describe justify-content, align-items, and flex-direction.
+Answer: 
+- `flex-direction`: Determines the main axis (row for horizontal, column for vertical).
+- `justify-content`: Aligns flex-items along the main axis (e.g., `center`, `space-between`).
+- `align-items`: Aligns flex-items along the cross axis (perpendicular to the main axis, e.g., `center`, `stretch`).
+
+Q8. Explain CSS Grid and how it differs from Flexbox. When would you use Grid over Flexbox?
+Answer: CSS Grid is a 2-dimensional layout system that handles both rows and columns simultaneously. Flexbox is 1-dimensional (handles either a row OR a column at a time). Use Flexbox for aligning items in a single row or column (like a navigation bar). Use CSS Grid when you need to construct a complex layout with multiple rows and columns (like a photo gallery or a whole page layout).
+
+Q9. Describe grid-template-columns, grid-template-rows, and grid-gap.
+Answer: 
+- `grid-template-columns`: Defines the number and width of columns in the grid. Example: `grid-template-columns: 100px 1fr 100px;` (3 columns).
+- `grid-template-rows`: Defines the number and height of rows.
+- `gap` (formerly `grid-gap`): Sets the size of the empty space between the rows and columns.
+
+Q10. What are media queries in CSS, and why are they important for responsive design?
+Answer: Media queries allow you to apply CSS styles only when specific conditions are met, such as the screen width or device orientation. They are essential for responsive design because they let you change the layout so a website looks great on both a large desktop monitor and a small mobile phone screen.
+
+Q11. Write a basic media query that adjusts the font size of a webpage for screens smaller than 600px.
+Answer:
+```css
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+```
+
+Q12. Explain the difference between web-safe fonts and custom web fonts. Why use a web-safe font?
+Answer: Web-safe fonts (like Arial or Times New Roman) are pre-installed on almost all computers and devices, guaranteeing they will load instantly. Custom web fonts (like those from Google Fonts) are downloaded by the browser when visiting the page. You might use a web-safe font if you prioritize extremely fast page loading and reliability over unique design aesthetics.
+
+Q13. What is the font-family property in CSS? How do you apply a custom Google Font to a webpage?
+Answer: The `font-family` property specifies the font for an element.
+To apply a Google Font:
+1. Link it in your HTML `<head>`: 
+`<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">`
+2. Apply it in your CSS: 
+`body { font-family: 'Roboto', sans-serif; }`

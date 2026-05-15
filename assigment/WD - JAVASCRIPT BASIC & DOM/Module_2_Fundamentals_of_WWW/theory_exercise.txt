@@ -1,0 +1,20 @@
+Module 2 - Fundamentals of World Wide Web
+
+THEORY EXERCISE
+
+Q1. Difference between Web Designer and Web Developer
+Answer: 
+- A Web Designer focuses on the visual aspects of a website. They create the layout, choose color schemes, design typography, and ensure the website looks beautiful and is user-friendly. They often use tools like Figma, Photoshop, or Adobe XD.
+- A Web Developer brings the designer's vision to life using code. They write HTML, CSS, and JavaScript to build the actual website. Developers make sure the buttons work, the layout is responsive on all devices, and the site functions correctly behind the scenes.
+
+Q2. What is W3C?
+Answer: W3C stands for the World Wide Web Consortium. It is an international community that develops open standards to ensure the long-term growth of the Web. They set the rules and guidelines for HTML, CSS, and other web technologies so that websites work consistently across all different browsers and devices.
+
+Q3. What is a Domain?
+Answer: A domain is the unique, easy-to-read name of a website that users type into their browser URL bar to visit a site (for example, 'google.com'). It acts as the human-friendly address for a website's numerical IP address.
+
+Q4. What is SEO?
+Answer: SEO stands for Search Engine Optimization. It is the process of improving your website so it ranks higher in search engine results (like on Google or Bing) when people search for relevant keywords. Good SEO helps a website get more organic (unpaid) traffic.
+
+Q5. What is the SDLC life cycle?
+Answer: SDLC stands for Software Development Life Cycle. It is a step-by-step process used by software teams to design, develop, test, and maintain high-quality software. The goal of SDLC is to produce software that meets or exceeds customer expectations, reaches completion within time and cost estimates, and works reliably.

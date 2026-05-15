@@ -1,0 +1,153 @@
+Module 8 - JavaScript (Labeled Module 7 in our folder structure)
+
+THEORY EXERCISE
+
+Q1. What is JavaScript? Explain the role of JavaScript in web development.
+Answer: JavaScript is a programming language that allows you to implement complex, dynamic features on web pages. While HTML provides the structure and CSS handles the styling, JavaScript makes the page interactive (like clicking a button to open a menu, submitting forms, or updating data without reloading the page).
+
+Q2. How is JavaScript different from other programming languages like Python or Java?
+Answer: Unlike Java (which is heavily compiled and runs on a virtual machine) or Python (which is mostly used for backend, data, and scripts), JavaScript was built specifically to run inside web browsers. It is an interpreted, loosely-typed language, meaning it's highly flexible and doesn't require compiling before running in the browser.
+
+Q3. Discuss the use of the <script> tag in HTML. How can you link an external JavaScript file?
+Answer: The `<script>` tag is used to embed or reference executable code within an HTML document. 
+To write JS directly: `<script> console.log("Hi"); </script>`
+To link an external file: `<script src="app.js"></script>`
+
+Q4. What are variables in JavaScript? How do you declare a variable using var, let, and const?
+Answer: Variables are containers for storing data values.
+- `var`: The old way of declaring variables (function-scoped). Avoid using it now.
+- `let`: Declares a block-scoped variable that can be changed later. Example: `let age = 20;`
+- `const`: Declares a block-scoped variable that cannot be reassigned. Example: `const pi = 3.14;`
+
+Q5. Explain the different data types in JavaScript.
+Answer: 
+- String: Text data (`"Hello"`)
+- Number: Numeric data (`42` or `3.14`)
+- Boolean: True or false (`true`)
+- Undefined: A variable declared but not assigned a value.
+- Null: An intentional empty value.
+- Object: A collection of key-value pairs (`{ name: "John", age: 30 }`)
+- Array: A list of items (`[1, 2, 3]`)
+
+Q6. What is the difference between undefined and null in JavaScript?
+Answer: `undefined` means a variable has been declared but hasn't been given a value yet. `null` is a value that a programmer explicitly assigns to a variable to mean "nothing" or "empty". 
+
+Q7. What are the different types of operators in JavaScript?
+Answer: 
+- Arithmetic: Perform math (e.g., `+`, `-`, `*`, `/`). Example: `5 + 2`
+- Assignment: Assign values to variables (e.g., `=`, `+=`). Example: `x = 10`
+- Comparison: Compare values (e.g., `==`, `>`, `<`). Example: `10 > 5` (true)
+- Logical: Combine multiple conditions (e.g., `&&` (AND), `||` (OR)). Example: `true && false` (false)
+
+Q8. What is the difference between == and === in JavaScript?
+Answer: `==` (loose equality) compares values after trying to convert them to the same type (so `5 == "5"` is true). `===` (strict equality) compares both value AND type, without converting (so `5 === "5"` is false). Always use `===`.
+
+Q9. What is control flow in JavaScript? Explain how if-else statements work.
+Answer: Control flow is the order in which the computer executes statements in a script. `if-else` statements allow the program to make decisions.
+```javascript
+if (age >= 18) {
+  console.log("You can vote.");
+} else {
+  console.log("Too young.");
+}
+```
+
+Q10. Describe switch statements. When should you use a switch instead of if-else?
+Answer: A `switch` statement evaluates an expression and executes code blocks based on matching cases. It is cleaner and easier to read than a long chain of `if-else if` statements when you are checking the exact value of a single variable against many possibilities.
+
+Q11. Explain the different types of loops in JavaScript.
+Answer: 
+- `for`: Best when you know exactly how many times to loop. Example: `for(let i=0; i<5; i++) { ... }`
+- `while`: Loops as long as a condition is true. Example: `while(x < 5) { x++; }`
+- `do-while`: Executes the code block once before checking the condition, then repeats as long as the condition is true.
+
+Q12. What is the difference between a while loop and a do-while loop?
+Answer: A `while` loop checks the condition first; if it's false immediately, the code inside never runs. A `do-while` loop runs the code inside it at least once before checking the condition.
+
+Q13. What are functions in JavaScript?
+Answer: Functions are reusable blocks of code designed to perform a particular task.
+```javascript
+function sayHi() {
+  console.log("Hi!");
+}
+sayHi(); // calling the function
+```
+
+Q14. What is the difference between a function declaration and a function expression?
+Answer: 
+- Declaration: `function greet() {}`. These are hoisted, meaning you can call them before they appear in the code.
+- Expression: `const greet = function() {};`. These are not hoisted, so you must define them before calling them.
+
+Q15. Discuss parameters and return values in functions.
+Answer: Parameters are the inputs a function takes (e.g., `function add(a, b)` where `a` and `b` are parameters). A return value is the final output the function gives back to the rest of the program (e.g., `return a + b;`).
+
+Q16. What is an array in JavaScript?
+Answer: An array is a special variable that can hold more than one value at a time in an ordered list.
+Declaration: `let fruits = ["Apple", "Banana", "Mango"];`
+
+Q17. Explain push(), pop(), shift(), and unshift().
+Answer: 
+- `push()`: Adds a new item to the END of the array.
+- `pop()`: Removes the LAST item from the array.
+- `shift()`: Removes the FIRST item from the array.
+- `unshift()`: Adds a new item to the BEGINNING of the array.
+
+Q18. What is an object in JavaScript?
+Answer: An object is a collection of related data consisting of key-value pairs (properties). While arrays store lists of items sequentially by index, objects store data by a descriptive name (key).
+
+Q19. Explain how to access and update object properties.
+Answer: 
+- Dot notation: `person.name = "Alice";` (used most often when you know the property name).
+- Bracket notation: `person["name"] = "Alice";` (used when the property name is stored in a variable or contains spaces).
+
+Q20. What are JavaScript events? Explain event listeners.
+Answer: Events are "things" that happen to HTML elements, like a user clicking a button or hovering over an image. An event listener is a function that waits for a specific event to occur and then runs some code in response.
+
+Q21. How does addEventListener() work?
+Answer: It attaches an event handler to a specific element without overwriting existing event handlers.
+```javascript
+let btn = document.querySelector('button');
+btn.addEventListener('click', function() {
+  alert('Button was clicked!');
+});
+```
+
+Q22. What is the DOM (Document Object Model)?
+Answer: The DOM is an programming interface for web documents. It represents the HTML page as a tree of objects (nodes) that JavaScript can interact with to change the page's structure, style, and content dynamically.
+
+Q23. Explain getElementById(), getElementsByClassName(), and querySelector().
+Answer: 
+- `getElementById('myId')`: Selects a single element with that exact ID.
+- `getElementsByClassName('myClass')`: Selects all elements with that class (returns an HTMLCollection).
+- `querySelector('.myClass')`: A more modern, flexible method that returns the first element that matches a CSS selector.
+
+Q24. Explain setTimeout() and setInterval().
+Answer: 
+- `setTimeout(function, delay)` runs the function ONCE after the specified delay (in milliseconds).
+- `setInterval(function, interval)` runs the function REPEATEDLY, waiting the specified interval between each execution.
+
+Q25. Example of setTimeout():
+Answer: 
+```javascript
+setTimeout(() => {
+  console.log("This prints after 2 seconds");
+}, 2000);
+```
+
+Q26. What is error handling in JavaScript?
+Answer: Error handling prevents your entire script from crashing when something goes wrong.
+```javascript
+try {
+  // Code that might throw an error
+  let result = 10 / unknownVariable;
+} catch (error) {
+  // Code to run if an error happens
+  console.log("An error occurred: " + error.message);
+} finally {
+  // Code that runs regardless of success or failure
+  console.log("Finished attempting calculation.");
+}
+```
+
+Q27. Why is error handling important?
+Answer: It is important because it prevents the application from crashing unexpectedly. It allows developers to display friendly error messages to the user and log technical details to help fix the bug later.
