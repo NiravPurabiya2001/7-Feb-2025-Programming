@@ -6,11 +6,9 @@
   <title>Blog Post – Typography & Web Fonts Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Two Google Fonts: Playfair Display for headings, Inter for body -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', 'Segoe UI', sans-serif; /* Body font */
       background: #fafaf9;
@@ -18,7 +16,6 @@
       line-height: 1.75;           /* Improved readability */
       font-size: 17px;             /* Comfortable reading size */
     }
-
     /* ── Header ──────────────────────────────────────────── */
     .blog-header {
       background: #1c1917;
@@ -28,14 +25,12 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .blog-header .brand {
       font-family: 'Playfair Display', serif; /* Heading font */
       font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
-
     .blog-header nav a {
       color: #a8a29e;
       text-decoration: none;
@@ -43,16 +38,13 @@
       margin-left: 24px;
       transition: color 0.2s;
     }
-
     .blog-header nav a:hover { color: white; }
-
     /* ── Article Layout ──────────────────────────────────── */
     .article-wrapper {
       max-width: 720px;
       margin: 60px auto;
       padding: 0 24px;
     }
-
     /* ── Category Tag ─────────────────────────────────────── */
     .category-tag {
       display: inline-block;
@@ -66,7 +58,6 @@
       letter-spacing: 0.8px;
       margin-bottom: 16px;
     }
-
     /* ── Title (Heading Font: Playfair Display) ───────────── */
     .article-title {
       font-family: 'Playfair Display', serif; /* Custom Google Font */
@@ -77,7 +68,6 @@
       margin-bottom: 12px;
       letter-spacing: -0.5px;
     }
-
     /* ── Subtitle ────────────────────────────────────────── */
     .article-subtitle {
       font-family: 'Playfair Display', serif;
@@ -88,7 +78,6 @@
       margin-bottom: 24px;
       font-weight: 700;
     }
-
     /* ── Author Meta ─────────────────────────────────────── */
     .author-meta {
       display: flex;
@@ -99,18 +88,15 @@
       border-bottom: 1px solid #e7e5e4;
       margin-bottom: 36px;
     }
-
     .author-avatar {
       width: 44px;
       height: 44px;
       border-radius: 50%;
       object-fit: cover;
     }
-
     .author-info { display: flex; flex-direction: column; }
     .author-name { font-weight: 600; font-size: 0.92rem; color: #1c1917; }
     .publish-date { font-size: 0.8rem; color: #78716c; }
-
     .reading-time {
       margin-left: auto;
       font-size: 0.8rem;
@@ -119,7 +105,6 @@
       padding: 4px 12px;
       border-radius: 20px;
     }
-
     /* ── Hero Image ──────────────────────────────────────── */
     .hero-img {
       width: 100%;
@@ -127,7 +112,6 @@
       margin-bottom: 40px;
       display: block;
     }
-
     /* ── Body Content (Body Font: Inter) ─────────────────── */
     .article-body h2 {
       font-family: 'Playfair Display', serif;
@@ -137,7 +121,6 @@
       margin: 36px 0 14px;
       line-height: 1.3;
     }
-
     .article-body p {
       font-family: 'Inter', sans-serif;
       font-size: 1rem;           /* 17px base, so 1rem = 17px */
@@ -146,7 +129,6 @@
       margin-bottom: 20px;
       letter-spacing: 0.01em;
     }
-
     .article-body blockquote {
       border-left: 4px solid #f59e0b;
       padding: 16px 24px;
@@ -154,7 +136,6 @@
       background: #fffbeb;
       border-radius: 0 8px 8px 0;
     }
-
     .article-body blockquote p {
       font-family: 'Playfair Display', serif;
       font-style: italic;
@@ -162,18 +143,15 @@
       color: #92400e;
       margin: 0;
     }
-
     .article-body ul, .article-body ol {
       margin: 0 0 20px 24px;
     }
-
     .article-body li {
       font-size: 1rem;
       color: #44403c;
       line-height: 1.7;
       margin-bottom: 6px;
     }
-
     code {
       font-family: 'Courier New', monospace;
       background: #f5f5f4;
@@ -182,7 +160,6 @@
       font-size: 0.9rem;
       color: #c2410c;
     }
-
     /* ── Tags ────────────────────────────────────────────── */
     .article-tags { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e7e5e4; }
     .article-tags span {
@@ -195,7 +172,6 @@
       margin-right: 8px;
       margin-bottom: 8px;
     }
-
     /* ── Footer ──────────────────────────────────────────── */
     footer {
       background: #1c1917;
@@ -205,7 +181,6 @@
       font-size: 0.85rem;
       margin-top: 60px;
     }
-
     /* ── Responsive Typography ───────────────────────────── */
     @media (max-width: 768px) {
       body { font-size: 15px; }
@@ -213,7 +188,6 @@
       .article-subtitle { font-size: 1.05rem; }
       .blog-header nav { display: none; }
     }
-
     @media (max-width: 480px) {
       body { font-size: 14px; }
       .article-title { font-size: 1.7rem; }
@@ -222,8 +196,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header class="blog-header">
     <div class="brand">The Dev Journal</div>
     <nav>
@@ -232,19 +204,10 @@
       <a href="#">About</a>
     </nav>
   </header>
-
-  <!-- Article -->
   <article class="article-wrapper">
-
     <span class="category-tag">Web Development</span>
-
-    <!-- Title: Playfair Display font -->
     <h1 class="article-title">The Art of Typography in Web Design</h1>
-
-    <!-- Subtitle: Playfair Display italic -->
     <p class="article-subtitle">How the right choice of fonts can transform a webpage from ordinary to extraordinary.</p>
-
-    <!-- Author -->
     <div class="author-meta">
       <img class="author-avatar" src="https://i.pravatar.cc/44?img=5" alt="Author Avatar" />
       <div class="author-info">
@@ -253,16 +216,11 @@
       </div>
       <span class="reading-time">⏱ 5 min read</span>
     </div>
-
-    <!-- Hero Image -->
     <img class="hero-img" src="https://via.placeholder.com/720x380/1c1917/f5f5f4?text=Typography+in+Web+Design" alt="Typography in Web Design" />
-
-    <!-- Body Content: Inter font -->
     <div class="article-body">
       <p>
         Typography is one of the most powerful tools in a web designer's toolkit. The fonts you choose don't just display text — they communicate personality, set the tone, and guide the user's eye through your content. A well-chosen typeface can make a website feel trustworthy, modern, playful, or professional.
       </p>
-
       <h2>Web-Safe Fonts vs Custom Fonts</h2>
       <p>
         <strong>Web-safe fonts</strong> like Arial, Georgia, and Verdana are pre-installed on virtually all operating systems. They don't require any HTTP requests to load, making them extremely fast and reliable. However, they offer limited variety and may not align with your brand identity.
@@ -270,11 +228,9 @@
       <p>
         <strong>Custom web fonts</strong> from services like Google Fonts or Adobe Fonts give you access to thousands of beautiful typefaces. This page uses two Google Fonts: <code>Playfair Display</code> for headings and <code>Inter</code> for body text.
       </p>
-
       <blockquote>
         <p>"Typography is the craft of endowing human language with a durable visual form." — Robert Bringhurst</p>
       </blockquote>
-
       <h2>Key Typography Properties in CSS</h2>
       <p>To create readable, well-spaced text, use these essential CSS properties:</p>
       <ul>
@@ -285,12 +241,10 @@
         <li><code>letter-spacing</code> – Adjusts space between characters</li>
         <li><code>color</code> – Ensure sufficient contrast (WCAG AA: 4.5:1 ratio)</li>
       </ul>
-
       <h2>Choosing the Right Font Pairing</h2>
       <p>
         A classic approach is to pair a <strong>serif font</strong> for headings with a <strong>sans-serif font</strong> for body text. This creates visual contrast while maintaining harmony. On this page, Playfair Display (serif, decorative) pairs beautifully with Inter (sans-serif, clean and modern).
       </p>
-
       <div class="article-tags">
         <span>#Typography</span>
         <span>#WebDesign</span>
@@ -299,12 +253,9 @@
         <span>#Frontend</span>
       </div>
     </div>
-
   </article>
-
   <footer>
     <p>© 2024 The Dev Journal · Typography & Web Fonts Lab – CSS Module 3</p>
   </footer>
-
 </body>
 </html>

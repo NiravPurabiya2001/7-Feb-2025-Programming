@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-// Mock API delay
+
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const MOCK_DB_KEY = 'app_records';

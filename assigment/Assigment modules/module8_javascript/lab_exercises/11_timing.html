@@ -24,17 +24,12 @@
   </style>
 </head>
 <body>
-
   <h1>⏱ Timing Events Lab</h1>
-
-  <!-- Task 2: Digital Clock using setInterval -->
   <div class="card">
     <h2>Task 2 – Digital Clock (setInterval)</h2>
     <div id="clock">00:00:00</div>
     <div id="date-display"></div>
   </div>
-
-  <!-- Task 1: Background color change using setTimeout -->
   <div class="card">
     <h2>Task 1 – Background Color Change (setTimeout)</h2>
     <p id="countdown-text">Background changes in:</p>
@@ -42,30 +37,24 @@
     <div id="bg-status">Countdown running...</div>
     <button id="restart-btn">Restart Countdown</button>
   </div>
-
   <script>
     // ────────────────────────────────────────────────────────────────────
     // Task 2: Digital Clock – updates every second using setInterval()
     // ────────────────────────────────────────────────────────────────────
     function updateClock() {
       const now = new Date();
-
       // Format time as HH:MM:SS
       const hours   = String(now.getHours()).padStart(2, '0');
       const minutes = String(now.getMinutes()).padStart(2, '0');
       const seconds = String(now.getSeconds()).padStart(2, '0');
-
       document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-
       // Also show date
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       document.getElementById('date-display').textContent = now.toLocaleDateString('en-IN', options);
     }
-
     // Run immediately, then update every 1 second
     updateClock();
     const clockInterval = setInterval(updateClock, 1000);
-
     // ────────────────────────────────────────────────────────────────────
     // Task 1: Background color change after 5 seconds using setTimeout()
     // ────────────────────────────────────────────────────────────────────
@@ -73,27 +62,22 @@
     let bgIndex = 0;
     let countdownInterval = null;
     let changeTimeout = null;
-
     function startCountdown() {
       // Clear any existing timers
       if (countdownInterval) clearInterval(countdownInterval);
       if (changeTimeout) clearTimeout(changeTimeout);
-
       let count = 5;
       const numEl = document.getElementById('countdown-num');
       const statusEl = document.getElementById('bg-status');
-
       numEl.textContent = count;
       numEl.style.color = '#f59e0b';
       statusEl.textContent = 'Countdown running...';
-
       // Countdown using setInterval
       countdownInterval = setInterval(() => {
         count--;
         numEl.textContent = count;
         if (count <= 0) clearInterval(countdownInterval);
       }, 1000);
-
       // Change background using setTimeout (fires once after 5 seconds)
       changeTimeout = setTimeout(() => {
         bgIndex = (bgIndex + 1) % bgColors.length;
@@ -103,13 +87,10 @@
         statusEl.textContent = `Background changed to ${bgColors[bgIndex]}!`;
       }, 5000);
     }
-
     // Start immediately on load
     startCountdown();
-
     // Restart button
     document.getElementById('restart-btn').addEventListener('click', startCountdown);
   </script>
-
 </body>
 </html>

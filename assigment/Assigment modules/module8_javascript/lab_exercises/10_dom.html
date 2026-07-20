@@ -24,13 +24,9 @@
   </style>
 </head>
 <body>
-
   <div class="card">
     <h1>DOM Manipulation Lab</h1>
-
-    <!-- Task: paragraph that starts with "Hello, World!" -->
     <p id="myParagraph">Hello, World!</p>
-
     <div class="btn-row">
       <button id="btn-change-text">Change Text</button>
       <button id="btn-change-color">Change Color</button>
@@ -39,10 +35,8 @@
       <button id="btn-toggle-class">Toggle Highlight</button>
       <button id="btn-reset">Reset</button>
     </div>
-
     <ul id="dynamicList"></ul>
   </div>
-
   <script>
     // ── DOM Selection ─────────────────────────────────────────────────────
     const para = document.getElementById('myParagraph');             // by ID
@@ -53,20 +47,16 @@
     const btnToggleClass  = document.getElementById('btn-toggle-class');
     const btnReset        = document.getElementById('btn-reset');
     const dynamicList     = document.querySelector('#dynamicList');   // by CSS selector
-
     const items = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Git'];
     let itemIndex = 0;
-
     // ── Task: Change text ─────────────────────────────────────────────────
     btnChangeText.addEventListener('click', () => {
       para.textContent = 'JavaScript is fun!';
     });
-
     // ── Task: Change color to blue ────────────────────────────────────────
     btnChangeColor.addEventListener('click', () => {
       para.style.color = '#60a5fa';
     });
-
     // ── Bonus: Add list item dynamically ──────────────────────────────────
     btnAddElement.addEventListener('click', () => {
       if (itemIndex < items.length) {
@@ -77,7 +67,6 @@
         itemIndex++;
       }
     });
-
     // ── Bonus: Remove last list item ──────────────────────────────────────
     btnRemoveElement.addEventListener('click', () => {
       const lastChild = dynamicList.lastElementChild;
@@ -86,19 +75,16 @@
         itemIndex--;
       }
     });
-
     // ── Bonus: Toggle CSS class on paragraph ──────────────────────────────
     btnToggleClass.addEventListener('click', () => {
       para.classList.toggle('highlighted');          // toggle class
     });
-
     // ── Bonus: Reset paragraph to original state ──────────────────────────
     btnReset.addEventListener('click', () => {
       para.textContent = 'Hello, World!';
       para.style.color = '';
       para.classList.remove('highlighted');
     });
-
     /* ── DOM Selection methods used in this lab:
        - document.getElementById()         – selects by unique ID
        - document.querySelector()          – selects by CSS selector (first match)
@@ -110,6 +96,5 @@
        - element.classList.toggle()        – toggles a CSS class
     */
   </script>
-
 </body>
 </html>

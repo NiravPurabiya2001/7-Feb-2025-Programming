@@ -135,7 +135,7 @@ class SubmissionViewer {
             this.renderTable();
             this.searchInput.addEventListener('input', this.handleSearch.bind(this));
             
-            // Event delegation for delete buttons
+
             this.tableBody.addEventListener('click', (e) => {
                 if (e.target.classList.contains('delete-btn')) {
                     const id = e.target.getAttribute('data-id');
@@ -190,7 +190,7 @@ class SubmissionViewer {
     }
 }
 
-// Initialize classes based on the current page
+
 document.addEventListener('DOMContentLoaded', () => {
     new CustomerFormHandler();
     new SubmissionViewer();

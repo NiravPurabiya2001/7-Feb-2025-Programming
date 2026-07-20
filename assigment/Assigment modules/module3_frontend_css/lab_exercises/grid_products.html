@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: #0f172a;
@@ -16,7 +15,6 @@
       min-height: 100vh;
       padding: 48px 24px;
     }
-
     h1 {
       text-align: center;
       font-size: 2rem;
@@ -27,14 +25,12 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
     .subtitle {
       text-align: center;
       color: #64748b;
       font-size: 0.95rem;
       margin-bottom: 40px;
     }
-
     /* ── CSS GRID: 3×3 product layout ────────────────────── */
     .product-grid {
       display: grid;
@@ -44,7 +40,6 @@
       max-width: 1050px;
       margin: 0 auto;
     }
-
     /* ── Product Card ─────────────────────────────────────── */
     .product-card {
       background: #1e293b;
@@ -54,24 +49,20 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       cursor: pointer;
     }
-
     /* ── Hover Effect ─────────────────────────────────────── */
     .product-card:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 20px 50px rgba(96, 165, 250, 0.15);
       border-color: #60a5fa;
     }
-
     .product-card:hover .product-img {
       transform: scale(1.08);
     }
-
     .img-wrapper {
       overflow: hidden;
       height: 180px;
       position: relative;
     }
-
     .product-img {
       width: 100%;
       height: 100%;
@@ -79,7 +70,6 @@
       transition: transform 0.4s ease;
       display: block;
     }
-
     .badge {
       position: absolute;
       top: 12px;
@@ -93,21 +83,17 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-
     .badge.sale { background: #ef4444; }
     .badge.new  { background: #22c55e; }
-
     .card-body {
       padding: 20px;
     }
-
     .product-title {
       font-size: 1rem;
       font-weight: 600;
       color: #f1f5f9;
       margin-bottom: 6px;
     }
-
     .product-category {
       font-size: 0.75rem;
       color: #64748b;
@@ -116,20 +102,17 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-
     .product-price {
       font-size: 1.25rem;
       font-weight: 700;
       color: #60a5fa;
     }
-
     .product-original {
       font-size: 0.85rem;
       color: #475569;
       text-decoration: line-through;
       margin-left: 8px;
     }
-
     .btn-add {
       display: block;
       width: 100%;
@@ -145,22 +128,18 @@
       transition: background 0.2s, color 0.2s;
       font-family: inherit;
     }
-
     .btn-add:hover {
       background: #3b82f6;
       color: white;
     }
-
     /* ── Stars ───────────────────────────────────────────── */
     .stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 10px; }
-
     /* ── Responsive: 2 columns on tablet, 1 on mobile ───── */
     @media (max-width: 900px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
     @media (max-width: 560px) {
       .product-grid {
         grid-template-columns: 1fr;
@@ -169,13 +148,9 @@
   </style>
 </head>
 <body>
-
   <h1>Product Catalog</h1>
   <p class="subtitle">3×3 CSS Grid Layout — Hover over cards for effects</p>
-
   <div class="product-grid">
-
-    <!-- Card 1 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/3b82f6/ffffff?text=Laptop+Pro" alt="Laptop Pro" />
@@ -189,8 +164,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 2 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/8b5cf6/ffffff?text=Headphones" alt="Wireless Headphones" />
@@ -204,8 +177,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 3 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/22c55e/ffffff?text=Smartwatch" alt="Smartwatch" />
@@ -218,8 +189,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 4 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/ef4444/ffffff?text=Camera" alt="DSLR Camera" />
@@ -233,8 +202,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 5 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/f59e0b/ffffff?text=Keyboard" alt="Mechanical Keyboard" />
@@ -248,8 +215,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 6 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/06b6d4/ffffff?text=Monitor+4K" alt="4K Monitor" />
@@ -262,8 +227,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 7 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/ec4899/ffffff?text=Mouse" alt="Gaming Mouse" />
@@ -276,8 +239,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 8 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/10b981/ffffff?text=Webcam" alt="HD Webcam" />
@@ -291,8 +252,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
-    <!-- Card 9 -->
     <div class="product-card">
       <div class="img-wrapper">
         <img class="product-img" src="https://via.placeholder.com/400x180/6366f1/ffffff?text=USB+Hub" alt="USB Hub" />
@@ -305,8 +264,6 @@
         <button class="btn-add">Add to Cart</button>
       </div>
     </div>
-
   </div>
-
 </body>
 </html>

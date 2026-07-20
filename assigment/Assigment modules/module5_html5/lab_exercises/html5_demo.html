@@ -29,18 +29,14 @@
   </style>
 </head>
 <body>
-
   <h1>HTML5 Features Demo</h1>
   <p class="subtitle">Audio · Video · Canvas · SVG — with muted, loop, autoplay attributes</p>
-
-  <!-- ── SECTION 1: AUDIO ──────────────────────────────── -->
   <div class="section">
     <div class="section-header">
       <h2>1. Audio Tag</h2>
       <span class="tag-badge">&lt;audio&gt;</span>
     </div>
     <div class="card">
-      <!-- Audio with controls, loop, muted, autoplay -->
       <audio
         id="audioDemo"
         controls
@@ -49,12 +45,10 @@
         autoplay
         preload="auto"
       >
-        <!-- Provide multiple sources for cross-browser compatibility -->
         <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
         <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
         Your browser does not support the HTML5 audio element.
       </audio>
-
       <ul class="prop-list">
         <li>controls</li>
         <li>loop</li>
@@ -69,8 +63,6 @@
       </p>
     </div>
   </div>
-
-  <!-- ── SECTION 2: VIDEO ──────────────────────────────── -->
   <div class="section">
     <div class="section-header">
       <h2>2. Video Tag</h2>
@@ -90,7 +82,6 @@
         <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
         Your browser does not support the HTML5 video element.
       </video>
-
       <ul class="prop-list">
         <li>controls</li>
         <li>loop</li>
@@ -105,8 +96,6 @@
       </p>
     </div>
   </div>
-
-  <!-- ── SECTION 3: CANVAS ─────────────────────────────── -->
   <div class="section">
     <div class="section-header">
       <h2>3. Canvas Tag – Shapes Drawn with JavaScript</h2>
@@ -124,8 +113,6 @@
       <p class="note">Canvas shapes are pixel-based and drawn using the 2D rendering context via JavaScript.</p>
     </div>
   </div>
-
-  <!-- ── SECTION 4: SVG ────────────────────────────────── -->
   <div class="section">
     <div class="section-header">
       <h2>4. SVG Tag – Scalable Vector Shapes</h2>
@@ -133,38 +120,25 @@
     </div>
     <div class="card">
       <svg width="100%" height="280" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
-
-        <!-- Rectangle -->
         <rect x="20" y="60" width="140" height="100" rx="12"
               fill="#3b82f6" opacity="0.9"/>
         <text x="90" y="118" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="14" font-weight="600">Rectangle</text>
-
-        <!-- Circle -->
         <circle cx="260" cy="110" r="60"
                 fill="#8b5cf6" opacity="0.9"/>
         <text x="260" y="115" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="14" font-weight="600">Circle</text>
-
-        <!-- Ellipse -->
         <ellipse cx="430" cy="110" rx="80" ry="50"
                  fill="#22c55e" opacity="0.9"/>
         <text x="430" y="115" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="14" font-weight="600">Ellipse</text>
-
-        <!-- Triangle (polygon) -->
         <polygon points="570,60 640,170 500,170"
                  fill="#f59e0b" opacity="0.9"/>
         <text x="570" y="200" text-anchor="middle" fill="#f59e0b" font-family="Inter,sans-serif" font-size="14" font-weight="600">Triangle</text>
-
-        <!-- Star (polygon) -->
         <polygon points="720,60 732,96 770,96 740,118 752,154 720,132 688,154 700,118 670,96 708,96"
                  fill="#ef4444" opacity="0.9"/>
         <text x="720" y="175" text-anchor="middle" fill="#ef4444" font-family="Inter,sans-serif" font-size="14" font-weight="600">Star</text>
-
-        <!-- Line -->
         <line x1="20" y1="230" x2="780" y2="230"
               stroke="#475569" stroke-width="1.5" stroke-dasharray="6,4"/>
         <text x="400" y="255" text-anchor="middle" fill="#64748b" font-family="Inter,sans-serif" font-size="12">SVG shapes are resolution-independent and scale perfectly at any size</text>
       </svg>
-
       <ul class="prop-list" style="margin-top:14px;">
         <li>&lt;rect&gt;</li>
         <li>&lt;circle&gt;</li>
@@ -177,12 +151,10 @@
       <p class="note">SVG shapes are resolution-independent vectors defined in XML. Unlike Canvas, they are part of the DOM and can be styled with CSS and manipulated with JavaScript.</p>
     </div>
   </div>
-
   <script>
     // ── Canvas Drawing ──────────────────────────────────────
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
-
     // 1. Filled Rectangle
     ctx.fillStyle = '#3b82f6';
     ctx.fillRect(20, 30, 140, 100);
@@ -190,7 +162,6 @@
     ctx.font = '13px Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('Rectangle', 90, 85);
-
     // 2. Circle (arc)
     ctx.beginPath();
     ctx.arc(260, 80, 60, 0, Math.PI * 2);
@@ -198,7 +169,6 @@
     ctx.fill();
     ctx.fillStyle = 'white';
     ctx.fillText('Circle', 260, 85);
-
     // 3. Triangle (path)
     ctx.beginPath();
     ctx.moveTo(430, 20);   // top
@@ -209,7 +179,6 @@
     ctx.fill();
     ctx.fillStyle = 'white';
     ctx.fillText('Triangle', 430, 90);
-
     // 4. Gradient Rectangle
     const gradient = ctx.createLinearGradient(550, 30, 700, 140);
     gradient.addColorStop(0, '#ef4444');
@@ -218,7 +187,6 @@
     ctx.fillRect(550, 30, 150, 110);
     ctx.fillStyle = 'white';
     ctx.fillText('Gradient', 625, 90);
-
     // 5. Rounded Rectangle (using arc)
     ctx.beginPath();
     const rX = 20, rY = 170, rW = 140, rH = 80, rR = 16;
@@ -236,7 +204,6 @@
     ctx.fill();
     ctx.fillStyle = 'white';
     ctx.fillText('Rounded Rect', 90, 215);
-
     // 6. Text
     ctx.font = 'bold 18px Inter, sans-serif';
     ctx.fillStyle = '#60a5fa';
@@ -247,6 +214,5 @@
     ctx.fillText('Pixel-based 2D drawing context', 200, 225);
     ctx.fillText('Shapes drawn via JavaScript', 200, 250);
   </script>
-
 </body>
 </html>

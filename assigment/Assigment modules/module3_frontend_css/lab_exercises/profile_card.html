@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -20,7 +19,6 @@
       flex-wrap: wrap;
       padding: 40px 20px;
     }
-
     /* ── Profile Card using border-box ─────────────────── */
     .profile-card {
       /* Demonstrating border-box: width includes padding and border */
@@ -35,12 +33,10 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .profile-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 30px 60px rgba(0,0,0,0.3);
     }
-
     /* ── Profile Card using content-box (default) ───────── */
     .profile-card.content-box-demo {
       /* content-box: width does NOT include padding and border */
@@ -49,7 +45,6 @@
       border-width: 3px;
       /* Total rendered width = 300px + 24px*2 (padding) + 3px*2 (border) = 354px */
     }
-
     /* Label showing box-sizing type */
     .box-label {
       display: inline-block;
@@ -63,11 +58,9 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
-
     .content-box-demo .box-label {
       background: #e74c3c;
     }
-
     /* Profile Avatar */
     .avatar-wrapper {
       width: 90px;
@@ -78,18 +71,15 @@
       padding: 3px;             /* Padding between avatar image and border */
       background: white;
     }
-
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
     }
-
     .content-box-demo .avatar-wrapper {
       border-color: #e74c3c;
     }
-
     /* Name & Bio */
     .profile-name {
       font-size: 1.2rem;
@@ -97,14 +87,12 @@
       color: #1e293b;
       margin-bottom: 6px;
     }
-
     .profile-role {
       font-size: 0.85rem;
       color: #64748b;
       font-weight: 500;
       margin-bottom: 12px;
     }
-
     .profile-bio {
       font-size: 0.88rem;
       color: #475569;
@@ -112,7 +100,6 @@
       margin-bottom: 20px;
       padding: 0 8px;           /* Padding on bio text */
     }
-
     /* Stats Row */
     .stats {
       display: flex;
@@ -123,11 +110,9 @@
       border-top: 1px solid #e2e8f0;
       border-bottom: 1px solid #e2e8f0;
     }
-
     .stat-item { text-align: center; }
     .stat-value { font-size: 1.1rem; font-weight: 700; color: #1e293b; }
     .stat-label { font-size: 0.75rem; color: #94a3b8; font-weight: 500; }
-
     /* Follow Button */
     .btn-follow {
       display: inline-block;
@@ -142,16 +127,13 @@
       transition: transform 0.2s, box-shadow 0.2s;
       margin: 0 auto;           /* Margin: centers the button */
     }
-
     .btn-follow:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
     }
-
     .content-box-demo .btn-follow {
       background: linear-gradient(135deg, #e74c3c, #c0392b);
     }
-
     /* Box Model info label */
     .box-info {
       font-size: 0.72rem;
@@ -162,8 +144,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Card 1: border-box sizing (preferred, modern) -->
   <div class="profile-card">
     <span class="box-label">box-sizing: border-box</span>
     <div class="avatar-wrapper">
@@ -192,8 +172,6 @@
     <button class="btn-follow">Follow</button>
     <p class="box-info">Width = 300px (padding + border included inside)</p>
   </div>
-
-  <!-- Card 2: content-box sizing (default, legacy) -->
   <div class="profile-card content-box-demo">
     <span class="box-label">box-sizing: content-box</span>
     <div class="avatar-wrapper">
@@ -222,6 +200,5 @@
     <button class="btn-follow">Follow</button>
     <p class="box-info">Width = 300px + 48px padding + 6px border = 354px actual</p>
   </div>
-
 </body>
 </html>

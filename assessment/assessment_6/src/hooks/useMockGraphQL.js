@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// This simulates a GraphQL client with localStorage persistence
+
 export function useMockGraphQL() {
   const [data, setData] = useState({
     profile: { name: 'Creator', bio: 'Welcome to my portfolio!' },
@@ -8,7 +8,7 @@ export function useMockGraphQL() {
   });
   const [loading, setLoading] = useState(true);
 
-  // Initial load from localStorage
+
   useEffect(() => {
     const savedProfile = localStorage.getItem('creator_profile');
     const savedProjects = localStorage.getItem('creator_projects');
@@ -20,12 +20,12 @@ export function useMockGraphQL() {
     setLoading(false);
   }, []);
 
-  // Mock Query
+
   const useQuery = (queryName) => {
     return { data: data[queryName], loading };
   };
 
-  // Mock Mutation
+
   const useMutation = (mutationType) => {
     const mutate = async (variables) => {
       let newData = { ...data };

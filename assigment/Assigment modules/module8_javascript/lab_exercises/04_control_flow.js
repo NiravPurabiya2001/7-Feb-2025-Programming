@@ -1,7 +1,3 @@
-// Lab 04 – Control Flow: if-else and switch
-// Run: node 04_control_flow.js
-
-// ── Task 1: Check if a number is positive, negative, or zero ──────────────
 function checkNumber(num) {
   if (num > 0) {
     return `${num} is a POSITIVE number`;
@@ -11,14 +7,11 @@ function checkNumber(num) {
     return `${num} is ZERO`;
   }
 }
-
 console.log("──── if-else: Positive/Negative/Zero ────────────");
 console.log(checkNumber(15));
 console.log(checkNumber(-7));
 console.log(checkNumber(0));
 console.log(checkNumber(-0.5));
-
-// ── Task 2: Day of the week using switch ──────────────────────────────────
 function getDayName(dayNumber) {
   switch (dayNumber) {
     case 1:
@@ -39,14 +32,11 @@ function getDayName(dayNumber) {
       return "Invalid day number. Please enter 1–7.";
   }
 }
-
 console.log("\n──── switch: Day of the Week ────────────────────");
 for (let i = 1; i <= 7; i++) {
   console.log(`Day ${i} → ${getDayName(i)}`);
 }
 console.log(`Day 8 → ${getDayName(8)}`);
-
-// ── Bonus: Grade classification using if-else-if ──────────────────────────
 function getGrade(score) {
   if (score >= 90)      return "A (Excellent)";
   else if (score >= 80) return "B (Good)";
@@ -54,7 +44,6 @@ function getGrade(score) {
   else if (score >= 60) return "D (Below Average)";
   else                  return "F (Fail)";
 }
-
 console.log("\n──── Bonus: Grade Classification ────────────────");
 [95, 82, 74, 61, 45].forEach(score => {
   console.log(`Score ${score} → Grade: ${getGrade(score)}`);

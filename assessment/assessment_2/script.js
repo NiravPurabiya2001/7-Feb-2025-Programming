@@ -10,18 +10,18 @@ function handleBookingChoice() {
     const choice = document.getElementById('bookingChoice').value;
     const container = document.getElementById('dynamicFieldsContainer');
     
-    // Clear previous fields
+
     container.innerHTML = '';
     
     if (choice === 'full') {
-        // Only date option
+
         container.appendChild(createDateField());
     } else if (choice === 'half') {
-        // Date and Slot option
+
         container.appendChild(createDateField());
         container.appendChild(createSlotField());
     } else if (choice === 'hourly') {
-        // Date and Time option
+
         container.appendChild(createDateField());
         container.appendChild(createTimeField());
     }

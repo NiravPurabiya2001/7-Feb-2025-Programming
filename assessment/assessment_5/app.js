@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewLinkList = document.getElementById('previewLinkList');
     const themeToggle = document.getElementById('themeToggle');
 
-    // Theme Management
+
     const initTheme = () => {
         const savedTheme = localStorage.getItem('bioTheme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initTheme();
 
-    // Link Management
+
     let links = JSON.parse(localStorage.getItem('bioLinks')) || [];
 
     const saveLinks = () => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         previewLinkList.innerHTML = '';
 
         links.forEach((link, index) => {
-            // Admin list item
+
             const div = document.createElement('div');
             div.className = 'admin-link-item';
             div.innerHTML = `
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             adminLinkList.appendChild(div);
 
-            // Preview link item
+
             const a = document.createElement('a');
             a.href = link.url;
             a.target = '_blank';
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderLinks();
 
-    // URL Validation
+
     const isValidUrl = (string) => {
         try {
             const url = new URL(string);
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
     });
 
-    // Event Delegation for Delete
+
     adminLinkList.addEventListener('click', (e) => {
         if (e.target.classList.contains('delete-btn')) {
             const index = e.target.getAttribute('data-index');
