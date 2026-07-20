@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Lab 11 – Timing Events</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 32px; padding: 24px; }
+    h1 { color: #60a5fa; text-align: center; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 28px 32px; width: 100%; max-width: 440px; text-align: center; }
+    .card h2 { font-size: 1rem; color: #94a3b8; margin-bottom: 16px; }
+    /* Clock */
+    #clock { font-size: 3rem; font-weight: 700; letter-spacing: 4px; color: #60a5fa; font-family: 'Courier New', monospace; margin-bottom: 8px; }
+    #date-display { font-size: 0.88rem; color: #64748b; }
+    /* Background change countdown */
+    #countdown-text { font-size: 1rem; color: #94a3b8; margin-bottom: 16px; }
+    #countdown-num { font-size: 2.5rem; font-weight: 700; color: #f59e0b; }
+    #bg-status { font-size: 0.85rem; color: #64748b; margin-top: 10px; }
+    button { margin-top: 14px; padding: 10px 24px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #2563eb; }
+    button.red { background: #ef4444; }
+    button.red:hover { background: #dc2626; }
+  </style>
+</head>
+<body>
+
+  <h1>⏱ Timing Events Lab</h1>
+
+  <!-- Task 2: Digital Clock using setInterval -->
+  <div class="card">
+    <h2>Task 2 – Digital Clock (setInterval)</h2>
+    <div id="clock">00:00:00</div>
+    <div id="date-display"></div>
+  </div>
+
+  <!-- Task 1: Background color change using setTimeout -->
+  <div class="card">
+    <h2>Task 1 – Background Color Change (setTimeout)</h2>
+    <p id="countdown-text">Background changes in:</p>
+    <div id="countdown-num">5</div>
+    <div id="bg-status">Countdown running...</div>
+    <button id="restart-btn">Restart Countdown</button>
+  </div>
+
+  <script>
+    // ────────────────────────────────────────────────────────────────────
+    // Task 2: Digital Clock – updates every second using setInterval()
+    // ────────────────────────────────────────────────────────────────────
+    function updateClock() {
+      const now = new Date();
+
+      // Format time as HH:MM:SS
+      const hours   = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+
+      // Also show date
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('date-display').textContent = now.toLocaleDateString('en-IN', options);
+    }
+
+    // Run immediately, then update every 1 second
+    updateClock();
+    const clockInterval = setInterval(updateClock, 1000);
+
+    // ────────────────────────────────────────────────────────────────────
+    // Task 1: Background color change after 5 seconds using setTimeout()
+    // ────────────────────────────────────────────────────────────────────
+    const bgColors = ['#0f172a', '#1a0533', '#0d2137', '#1a1a0d', '#0d1a0d'];
+    let bgIndex = 0;
+    let countdownInterval = null;
+    let changeTimeout = null;
+
+    function startCountdown() {
+      // Clear any existing timers
+      if (countdownInterval) clearInterval(countdownInterval);
+      if (changeTimeout) clearTimeout(changeTimeout);
+
+      let count = 5;
+      const numEl = document.getElementById('countdown-num');
+      const statusEl = document.getElementById('bg-status');
+
+      numEl.textContent = count;
+      numEl.style.color = '#f59e0b';
+      statusEl.textContent = 'Countdown running...';
+
+      // Countdown using setInterval
+      countdownInterval = setInterval(() => {
+        count--;
+        numEl.textContent = count;
+        if (count <= 0) clearInterval(countdownInterval);
+      }, 1000);
+
+      // Change background using setTimeout (fires once after 5 seconds)
+      changeTimeout = setTimeout(() => {
+        bgIndex = (bgIndex + 1) % bgColors.length;
+        document.body.style.background = bgColors[bgIndex];
+        numEl.textContent = '✓';
+        numEl.style.color = '#22c55e';
+        statusEl.textContent = `Background changed to ${bgColors[bgIndex]}!`;
+      }, 5000);
+    }
+
+    // Start immediately on load
+    startCountdown();
+
+    // Restart button
+    document.getElementById('restart-btn').addEventListener('click', startCountdown);
+  </script>
+
+</body>
+</html>

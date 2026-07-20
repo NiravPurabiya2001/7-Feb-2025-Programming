@@ -1,0 +1,50 @@
+Module 2 – Frontend - HTML
+
+## HTML Basics
+
+**Question 1: Define HTML. What is the purpose of HTML in web development?**
+HTML stands for HyperText Markup Language. It's the standard language used to build web pages. Its main purpose is to provide the structure and content of a webpage. Think of it like the skeleton of a building—it defines where the headings, paragraphs, images, and links go, organizing everything so the browser knows how to display it.
+
+**Question 2: Explain the basic structure of an HTML document. Identify the mandatory tags and their purposes.**
+A standard HTML document starts with `<!DOCTYPE html>`, which tells the browser it's an HTML5 page. Then comes the `<html>` tag, which wraps all the content. Inside the `<html>` tag are two main parts: 
+- The `<head>` tag: This holds behind-the-scenes information, like the title of the page and links to CSS styles. Users don't see this content on the page itself.
+- The `<body>` tag: This contains everything the user actually sees on the screen, like text, images, and buttons.
+
+**Question 3: What is the difference between block-level elements and inline elements in HTML? Provide examples of each.**
+Block-level elements always start on a brand new line and stretch out as wide as they possibly can, like a big block. Examples include paragraphs (`<p>`) and headings (`<h1>`). Inline elements, however, only take up as much width as they need and don't force a new line—they just flow right in the middle of a sentence. Examples include links (`<a>`) and bold text (`<strong>`).
+
+**Question 4: Discuss the role of semantic HTML. Why is it important for accessibility and SEO? Provide examples of semantic elements.**
+Semantic HTML means using tags that actually describe what the content is, rather than just using generic boxes. Instead of putting a menu in a generic `<div>`, you put it in a `<nav>` tag. This is incredibly important for accessibility because it helps screen readers tell visually impaired users exactly what part of the page they are on. It also helps SEO because search engines can understand your content better and rank it higher. Examples include `<header>`, `<footer>`, `<article>`, and `<main>`.
+
+## HTML Forms
+
+**Question 1: What are HTML forms used for? Describe the purpose of the input, textarea, select, and button elements.**
+Forms are used to collect information from users, like when logging in or checking out of a store. 
+- `<input>` is for basic data like a single line of text, passwords, or checkboxes.
+- `<textarea>` is for longer, multi-line text, like typing a comment or a message.
+- `<select>` creates a dropdown menu so users can pick from a list of options.
+- `<button>` is the clickable element used to submit the form data to the server.
+
+**Question 2: Explain the difference between the GET and POST methods in form submission. When should each be used?**
+GET and POST are two ways to send form data. GET attaches the data right onto the end of the URL (like a web address), making it visible to everyone. It's best for safe, repeatable actions like searching a website. POST hides the data securely inside the request body. It should always be used for sensitive actions, like sending passwords or submitting payment information.
+
+**Question 3: What is the purpose of the label element in a form, and how does it improve accessibility?**
+The `<label>` element acts as a nametag for form inputs, telling the user what information to type in. It vastly improves accessibility because when a screen reader focuses on an input, it reads the label aloud. It also improves usability because clicking on the label automatically highlights the input field, which is especially helpful for tiny checkboxes on mobile phones.
+
+## HTML Tables
+
+**Question 1: Explain the structure of an HTML table and the purpose of each of the following elements: <table>, <tr>, <th>, <td>, and <thead>.**
+An HTML table organizes data into rows and columns. 
+- `<table>` is the main container that wraps the entire table.
+- `<thead>` groups the header content at the top of the table.
+- `<tr>` stands for "table row" and is used to create a new horizontal row.
+- `<th>` is a "table header" cell, usually bold and centered, used at the top of columns.
+- `<td>` is a "table data" cell, which holds the actual regular data inside the rows.
+
+**Question 2: What is the difference between colspan and rowspan in tables? Provide examples.**
+These attributes let a single cell stretch across multiple columns or rows. 
+- `colspan` makes a cell stretch horizontally across multiple columns (e.g., `<td colspan="2">` spans two columns).
+- `rowspan` makes a cell stretch vertically down across multiple rows (e.g., `<td rowspan="3">` stretches down across three rows).
+
+**Question 3: Why should tables be used sparingly for layout purposes? What is a better alternative?**
+Tables should only be used for displaying actual tabular data (like a spreadsheet or schedule). Using them to build the overall layout of a webpage is a terrible idea because it makes the code messy, ruins accessibility for screen readers, and makes the site extremely difficult to adapt for mobile phones. The modern and correct alternatives for layout are CSS Flexbox and CSS Grid.

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Catalog – HTML Tables Lab</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 40px 20px; color: #333; }
+    h1 { text-align: center; color: #2c3e50; margin-bottom: 6px; font-size: 1.8rem; }
+    .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; font-size: 0.95rem; }
+    .table-wrapper { overflow-x: auto; }
+    table { width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.1); border: 1px solid #dce1e9; }
+    thead { background: #2c3e50; color: white; }
+    thead th { padding: 14px 16px; text-align: left; font-size: 0.9rem; letter-spacing: 0.5px; }
+    tbody tr { border-bottom: 1px solid #ecf0f1; transition: background 0.2s; }
+    tbody tr:hover { background: #f0f7ff; }
+    td { padding: 14px 16px; vertical-align: middle; font-size: 0.9rem; }
+    td img { width: 70px; height: 70px; object-fit: cover; border-radius: 6px; border: 1px solid #ddd; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+    .in-stock { background: #d4edda; color: #155724; }
+    .out-stock { background: #f8d7da; color: #721c24; }
+    tfoot td { background: #ecf0f1; font-weight: 600; padding: 12px 16px; font-size: 0.88rem; color: #555; }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 Product Catalog</h1>
+  <p class="subtitle">Browse our latest products – Updated July 2024</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- Row 1 -->
+        <tr>
+          <td>1</td>
+          <td><strong>Wireless Headphones</strong></td>
+          <td><img src="https://via.placeholder.com/70x70/3498db/ffffff?text=HP" alt="Wireless Headphones" /></td>
+          <td>₹2,499</td>
+          <td>Noise-cancelling Bluetooth headphones with 30-hour battery life.</td>
+          <td><span class="badge in-stock">✔ In Stock</span></td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr>
+          <td>2</td>
+          <td><strong>Mechanical Keyboard</strong></td>
+          <td><img src="https://via.placeholder.com/70x70/e74c3c/ffffff?text=KB" alt="Mechanical Keyboard" /></td>
+          <td>₹4,999</td>
+          <td>RGB backlit mechanical keyboard with Cherry MX Blue switches.</td>
+          <td><span class="badge in-stock">✔ In Stock</span></td>
+        </tr>
+
+        <!-- Row 3 – colspan example in description -->
+        <tr>
+          <td>3</td>
+          <td><strong>4K Monitor</strong></td>
+          <td><img src="https://via.placeholder.com/70x70/27ae60/ffffff?text=4K" alt="4K Monitor" /></td>
+          <td>₹24,999</td>
+          <td>27-inch 4K UHD IPS display with HDR10 and 144Hz refresh rate. <em>Available in 2 colors.</em></td>
+          <td><span class="badge out-stock">✖ Out of Stock</span></td>
+        </tr>
+
+        <!-- Row 4 -->
+        <tr>
+          <td>4</td>
+          <td><strong>USB-C Hub</strong></td>
+          <td><img src="https://via.placeholder.com/70x70/9b59b6/ffffff?text=HUB" alt="USB-C Hub" /></td>
+          <td>₹1,299</td>
+          <td>7-in-1 USB-C hub with HDMI, USB 3.0, SD card slot, and PD charging.</td>
+          <td><span class="badge in-stock">✔ In Stock</span></td>
+        </tr>
+
+        <!-- Row 5 – rowspan example: Category spans 2 rows -->
+        <tr>
+          <td>5</td>
+          <td><strong>Gaming Mouse</strong></td>
+          <td><img src="https://via.placeholder.com/70x70/e67e22/ffffff?text=MS" alt="Gaming Mouse" /></td>
+          <td>₹1,799</td>
+          <td rowspan="2" style="background:#fef9f0;">
+            <em>Peripherals Bundle:</em><br/>
+            High-performance gaming peripherals designed for pro gamers. Ergonomic design with customizable RGB lighting.
+          </td>
+          <td><span class="badge in-stock">✔ In Stock</span></td>
+        </tr>
+
+        <!-- Row 6 – shares Description cell via rowspan -->
+        <tr>
+          <td>6</td>
+          <td><strong>Mouse Pad XL</strong></td>
+          <td><img src="https://via.placeholder.com/70x70/1abc9c/ffffff?text=PAD" alt="Mouse Pad XL" /></td>
+          <td>₹599</td>
+          <!-- td omitted – merged with rowspan above -->
+          <td><span class="badge in-stock">✔ In Stock</span></td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="3">Total Products Listed: <strong>6</strong></td>
+          <td colspan="3">In Stock: <strong>5</strong> &nbsp;|&nbsp; Out of Stock: <strong>1</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</body>
+</html>

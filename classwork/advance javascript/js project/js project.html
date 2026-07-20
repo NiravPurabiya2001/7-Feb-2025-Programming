@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Money Calculator</title>
+  
+</head>
+<body>
+
+  <h2>Money Calculator</h2>
+
+ 
+    <label>₹1000 notes: </label>
+    <input type="number" id="note1000" min="0" onkeyup="calculate()" onchange="calculate()">
+    <span id="total1000">= ₹0</span>
+  
+ <br>
+ 
+    <label>₹500 notes: </label>
+    <input type="number" id="note500" min="0" onkeyup="calculate()" onchange="calculate()">
+    <span id="total500">= ₹0</span>
+  <br>
+
+  
+    <label>₹200 notes: </label>
+    <input type="number" id="note200" min="0" onkeyup="calculate()" onchange="calculate()">
+    <span id="total200">= ₹0</span>
+
+
+  
+    <p>Total Notes: <span id="totalnotes">0</span></p>
+    <p>Total Amount: ₹<span id="grandtotal">0</span></p>
+  
+
+  <script>
+    function calculate() {
+      
+      const n1000 = parseInt(document.getElementById("note1000").value) || 0;
+      const n500 = parseInt(document.getElementById("note500").value) || 0;
+      const n200 = parseInt(document.getElementById("note200").value) || 0;
+
+     
+      const total1000 = n1000 * 1000;
+      const total500 = n500 * 500;
+      const total200 = n200 * 200;
+
+     
+      document.getElementById("total1000").textContent = "= ₹" + total1000;
+      document.getElementById("total500").textContent = "= ₹" + total500;
+      document.getElementById("total200").textContent = "= ₹" + total200;
+
+      
+      const totalnotes = n1000 + n500 + n200;
+      const grandtotal = total1000 + total500 + total200;
+
+      document.getElementById("totalnotes").textContent = totalnotes;
+      document.getElementById("grandtotal").textContent = grandtotal;
+    }
+  </script>
+
+</body>
+</html>
+
+
+    

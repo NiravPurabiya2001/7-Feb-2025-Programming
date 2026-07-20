@@ -1,0 +1,19 @@
+Here is the lab exercise covering the phases of the Software Development Life Cycle and the concept of a program:
+
+The Software Development Life Cycle, commonly known as SDLC, is a well-defined process used to plan, create, test, and deploy software effectively. It's broken down into several distinct phases. 
+
+The first phase is Planning. In this stage, the main objective is to define the project's purpose and goals. A team will conduct a feasibility study to check if the project is technically and financially viable, estimate the costs and timeline, and assign roles. For example, if a company wants to build a food delivery app, they figure out how much it will cost and how long it will take during this phase. 
+
+The second phase is Requirements Analysis. Here, the team meets with clients and stakeholders to gather and document exactly what the software must do. They define functional requirements, like "a user must be able to log in", and non-functional requirements, like "the app must load in under two seconds." All of this is documented in a Software Requirements Specification. 
+
+The third phase is System Design, where those requirements are translated into a technical blueprint. The team designs the overall system architecture, the database schema, and creates user interface mockups. They also decide on the technology stack they will use to build the application. 
+
+Phase four is Implementation, or Development. This is where the actual coding happens. Developers set up their environments, write the source code based on the design documents, and use version control tools like Git to manage changes. They focus on writing clean, readable code and integrating the front-end with the back-end. 
+
+The fifth phase is Testing. Before any software is released, it must be rigorously tested to ensure it is bug-free and meets all the initial requirements. This includes unit testing individual components, integration testing to see how they work together, and user acceptance testing where actual users validate the software. 
+
+Phase six is Deployment. The tested software is finally released to the production environment where end-users can access it. This often involves setting up automated deployment pipelines and configuring cloud servers or domains. 
+
+The final phase is Maintenance. Even after a successful launch, software requires ongoing attention. The team monitors performance, fixes any new bugs reported by users, applies security patches, and periodically adds new features to improve the system. 
+
+Moving on to the second part of the exercise: what exactly is a program? In simple terms, a program is a set of instructions written in a programming language that tells a computer how to perform specific tasks. Programs consist of a logical sequence of instructions that are executed in order, often containing conditions that make decisions and loops that repeat operations. A typical program takes some form of input, processes it logically, and produces an output, sometimes storing data along the way. Because computers only understand binary, the source code written by a programmer must be translated into machine code by a compiler or interpreter before the computer's CPU can actually execute it. Programs range from the operating system running your computer to the web browser you use to surf the internet.

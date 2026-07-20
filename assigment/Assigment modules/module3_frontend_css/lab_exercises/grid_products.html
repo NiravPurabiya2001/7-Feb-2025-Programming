@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid – Product Cards Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 48px 24px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    /* ── CSS GRID: 3×3 product layout ────────────────────── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      grid-template-rows: auto;
+      gap: 24px;                              /* space between cards */
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    /* ── Product Card ─────────────────────────────────────── */
+    .product-card {
+      background: #1e293b;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* ── Hover Effect ─────────────────────────────────────── */
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(96, 165, 250, 0.15);
+      border-color: #60a5fa;
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.08);
+    }
+
+    .img-wrapper {
+      overflow: hidden;
+      height: 180px;
+      position: relative;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #3b82f6;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge.sale { background: #ef4444; }
+    .badge.new  { background: #22c55e; }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+
+    .product-original {
+      font-size: 0.85rem;
+      color: #475569;
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
+
+    .btn-add {
+      display: block;
+      width: 100%;
+      margin-top: 16px;
+      padding: 10px;
+      background: transparent;
+      border: 1.5px solid #3b82f6;
+      color: #60a5fa;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-add:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* ── Stars ───────────────────────────────────────────── */
+    .stars { color: #fbbf24; font-size: 0.85rem; margin-bottom: 10px; }
+
+    /* ── Responsive: 2 columns on tablet, 1 on mobile ───── */
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Product Catalog</h1>
+  <p class="subtitle">3×3 CSS Grid Layout — Hover over cards for effects</p>
+
+  <div class="product-grid">
+
+    <!-- Card 1 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/3b82f6/ffffff?text=Laptop+Pro" alt="Laptop Pro" />
+        <span class="badge sale">Sale</span>
+      </div>
+      <div class="card-body">
+        <p class="product-category">Electronics</p>
+        <h3 class="product-title">Laptop Pro 15"</h3>
+        <div class="stars">★★★★★</div>
+        <div><span class="product-price">₹54,999</span><span class="product-original">₹69,999</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/8b5cf6/ffffff?text=Headphones" alt="Wireless Headphones" />
+        <span class="badge new">New</span>
+      </div>
+      <div class="card-body">
+        <p class="product-category">Audio</p>
+        <h3 class="product-title">Wireless Headphones X1</h3>
+        <div class="stars">★★★★☆</div>
+        <div><span class="product-price">₹3,499</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/22c55e/ffffff?text=Smartwatch" alt="Smartwatch" />
+      </div>
+      <div class="card-body">
+        <p class="product-category">Wearables</p>
+        <h3 class="product-title">Smartwatch Series 5</h3>
+        <div class="stars">★★★★★</div>
+        <div><span class="product-price">₹8,999</span><span class="product-original">₹11,500</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/ef4444/ffffff?text=Camera" alt="DSLR Camera" />
+        <span class="badge sale">Sale</span>
+      </div>
+      <div class="card-body">
+        <p class="product-category">Photography</p>
+        <h3 class="product-title">DSLR Camera 24MP</h3>
+        <div class="stars">★★★★☆</div>
+        <div><span class="product-price">₹42,000</span><span class="product-original">₹55,000</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/f59e0b/ffffff?text=Keyboard" alt="Mechanical Keyboard" />
+        <span class="badge new">New</span>
+      </div>
+      <div class="card-body">
+        <p class="product-category">Peripherals</p>
+        <h3 class="product-title">Mechanical Keyboard RGB</h3>
+        <div class="stars">★★★★★</div>
+        <div><span class="product-price">₹5,299</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/06b6d4/ffffff?text=Monitor+4K" alt="4K Monitor" />
+      </div>
+      <div class="card-body">
+        <p class="product-category">Displays</p>
+        <h3 class="product-title">4K Monitor 27"</h3>
+        <div class="stars">★★★★☆</div>
+        <div><span class="product-price">₹26,999</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/ec4899/ffffff?text=Mouse" alt="Gaming Mouse" />
+      </div>
+      <div class="card-body">
+        <p class="product-category">Gaming</p>
+        <h3 class="product-title">Gaming Mouse 16000 DPI</h3>
+        <div class="stars">★★★★★</div>
+        <div><span class="product-price">₹2,199</span><span class="product-original">₹2,999</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/10b981/ffffff?text=Webcam" alt="HD Webcam" />
+        <span class="badge new">New</span>
+      </div>
+      <div class="card-body">
+        <p class="product-category">Accessories</p>
+        <h3 class="product-title">HD Webcam 1080p</h3>
+        <div class="stars">★★★☆☆</div>
+        <div><span class="product-price">₹1,899</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="product-card">
+      <div class="img-wrapper">
+        <img class="product-img" src="https://via.placeholder.com/400x180/6366f1/ffffff?text=USB+Hub" alt="USB Hub" />
+      </div>
+      <div class="card-body">
+        <p class="product-category">Accessories</p>
+        <h3 class="product-title">USB-C Hub 7-in-1</h3>
+        <div class="stars">★★★★☆</div>
+        <div><span class="product-price">₹1,499</span></div>
+        <button class="btn-add">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

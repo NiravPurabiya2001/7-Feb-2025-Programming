@@ -1,0 +1,40 @@
+ 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    border: 2px solid;
+    background-color:;
+}
+.logo{
+    height: 100px;
+    width: 25%;
+    border: 2px solid;
+}
+.elements {
+    font-weight:bold;
+    align-content: center;
+}
+.elements a {
+    text-decoration: none;
+    color: black;
+}
+.elements ul li{
+    list-style: none;
+    display: inline;
+    padding: 100px;
+    
+    
+
+}
+.main{
+    height: 500px;
+    width: 100%;
+    border: 2px solid;
+    
+}

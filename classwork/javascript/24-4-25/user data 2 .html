@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="num1">FACTORIAL CALCULATOR</h1>
+    <input type="text" placeholder="enter num" id="num2">
+    <button onclick="fac()">submit</button>
+    <script>
+        function fac()
+        {
+            let n = document.getElementById("num2").value
+            let i =1
+            let fac=1
+            for(i=1;i<=n;i++)
+            {
+                fac=fac*i
+            }
+            document.write(fac)
+           
+        }
+    </script>
+</body>
+</html>

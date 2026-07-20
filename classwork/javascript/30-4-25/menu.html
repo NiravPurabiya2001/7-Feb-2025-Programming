@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ENTER 1 FOR FACTORIAL</h1>
+    <br>
+    <h1>ENTER 2 FOR RIGHT ANGLE TRIANGLE</h1>
+    <br>
+    <h1>ENTER 3 FOR EVEN</h1>
+    <br>
+    <h1>ENTER 4 FOR EXIT</h1>
+    <br>
+    <input type="text" id="input" placeholder="Enter number">
+    <button>submit</button>
+
+    <script>
+        let n1 = document.getElementById("input")
+
+        function fac(){
+            for(i=1;i<=n1;i++)
+            fac = fac*i
+        }
+
+        function pattern (){
+            for(i=1;i<=n1;i++)
+            {
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        function even(){
+            if(n1/2==0){
+                document.write("even")
+            }
+            else{
+                document.write("odd")
+            }
+        }
+
+        function exit ()
+        {
+            
+        }
+    </script>
+
+    
+</body>
+</html>

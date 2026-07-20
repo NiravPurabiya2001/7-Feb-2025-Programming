@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Basics Lab – Semantic Webpage</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f6f8; color: #333; }
+    header { background: #2c3e50; color: white; padding: 20px 40px; }
+    header h1 { font-size: 1.8rem; }
+    nav { background: #34495e; padding: 10px 40px; }
+    nav a { color: #ecf0f1; text-decoration: none; margin-right: 20px; font-size: 0.95rem; }
+    nav a:hover { text-decoration: underline; }
+    .container { display: flex; max-width: 1100px; margin: 30px auto; gap: 24px; padding: 0 20px; }
+    main { flex: 3; background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    aside { flex: 1; background: #eaf0fb; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    h2 { color: #2c3e50; margin-bottom: 12px; font-size: 1.3rem; border-bottom: 2px solid #3498db; padding-bottom: 6px; }
+    p { line-height: 1.7; margin-bottom: 16px; }
+    ul, ol { margin-left: 24px; margin-bottom: 16px; }
+    li { margin-bottom: 6px; line-height: 1.6; }
+    a.ext-link { color: #2980b9; font-weight: 600; }
+    footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 18px; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>My HTML Basics Lab Page</h1>
+    <p>Module 2 – Frontend HTML Lab Assignment</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#lists">Lists</a>
+    <a href="#links">Links</a>
+    <a href="#aside">Sidebar</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- Main Content -->
+    <main id="about">
+      <h2>About Web Development</h2>
+      <p>
+        Web development is the process of building and maintaining websites and web applications.
+        It encompasses everything from simple static pages to complex dynamic platforms like
+        social networks, e-commerce systems, and web-based tools. Modern web development
+        relies on three core technologies: <strong>HTML</strong> for structure,
+        <strong>CSS</strong> for styling, and <strong>JavaScript</strong> for interactivity.
+      </p>
+      <p>
+        Semantic HTML helps create accessible, SEO-friendly web pages by using elements that
+        carry meaning. Elements like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>,
+        <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> communicate the structure
+        of the document to browsers and assistive technologies.
+      </p>
+
+      <!-- Unordered List -->
+      <section id="lists">
+        <h2>Unordered List – Frontend Technologies</h2>
+        <ul>
+          <li>HTML – HyperText Markup Language (structure)</li>
+          <li>CSS – Cascading Style Sheets (styling)</li>
+          <li>JavaScript – Programming language (behavior)</li>
+          <li>React.js – JavaScript library for building UIs</li>
+          <li>Node.js – JavaScript runtime for backend development</li>
+        </ul>
+
+        <!-- Ordered List -->
+        <h2 style="margin-top:20px;">Ordered List – Steps to Build a Website</h2>
+        <ol>
+          <li>Plan the website structure and gather requirements</li>
+          <li>Design wireframes and mockups (UI/UX)</li>
+          <li>Write HTML for the page structure</li>
+          <li>Apply CSS for styling and responsiveness</li>
+          <li>Add JavaScript for dynamic behavior and interactivity</li>
+          <li>Test across browsers and devices</li>
+          <li>Deploy to a web hosting service</li>
+        </ol>
+      </section>
+
+      <!-- External Link -->
+      <section id="links" style="margin-top:24px;">
+        <h2>Useful Links</h2>
+        <p>
+          Learn more about HTML on
+          <a class="ext-link" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+            MDN Web Docs – HTML ↗
+          </a>
+          (opens in a new tab).
+        </p>
+        <p>
+          Official HTML specification:
+          <a class="ext-link" href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">
+            WHATWG HTML Living Standard ↗
+          </a>
+        </p>
+        <p>
+          Practice HTML on:
+          <a class="ext-link" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">
+            W3Schools HTML Tutorial ↗
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Aside / Sidebar Section -->
+    <aside id="aside">
+      <h2>Quick Facts</h2>
+      <p>HTML was created by <strong>Tim Berners-Lee</strong> in 1991.</p>
+      <p>The current version is <strong>HTML5</strong>, standardized in 2014.</p>
+      <p>There are over <strong>100 HTML elements</strong> defined in the HTML specification.</p>
+
+      <h2 style="margin-top:20px;">Key HTML Elements</h2>
+      <ul>
+        <li><code>&lt;html&gt;</code> – Root element</li>
+        <li><code>&lt;head&gt;</code> – Metadata container</li>
+        <li><code>&lt;body&gt;</code> – Visible content</li>
+        <li><code>&lt;h1&gt;–&lt;h6&gt;</code> – Headings</li>
+        <li><code>&lt;p&gt;</code> – Paragraph</li>
+        <li><code>&lt;a&gt;</code> – Anchor/Link</li>
+        <li><code>&lt;img&gt;</code> – Image</li>
+        <li><code>&lt;div&gt;</code> – Generic block</li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2024 Frontend Assignment – HTML Basics Lab | Module 2</p>
+  </footer>
+
+</body>
+</html>

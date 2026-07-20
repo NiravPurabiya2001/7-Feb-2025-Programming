@@ -1,0 +1,11 @@
+Module 5 – Frontend – HTML5
+
+**Question 1: Difference b/w HTML & HTML5?**
+HTML5 is simply the newest, most modern version of HTML. Older versions of HTML (like HTML4) were quite rigid and required external plugins like Adobe Flash just to play a simple video or audio clip. HTML5 changed everything by building video and audio support directly into the browser. HTML5 also introduced a much simpler, cleaner doctype declaration (`<!DOCTYPE html>`) and added modern features like local storage (which is better than old-school cookies) and native support for drawing graphics using the canvas element.
+
+**Question 2: What are the additional tags used in HTML5?**
+HTML5 introduced a ton of new, "semantic" tags that give real meaning to the structure of a webpage, rather than just using generic `<div>` tags everywhere. 
+- Structural tags like `<header>`, `<footer>`, `<nav>`, `<main>`, and `<article>` help organize the page logically, which is great for SEO and screen readers.
+- Media tags like `<audio>` and `<video>` let you embed media without needing third-party plugins.
+- Graphic tags like `<canvas>` let you draw 2D animations using JavaScript.
+- It also added powerful new input types for forms, like `<input type="email">` and `<input type="date">`, which automatically give mobile users the correct keyboard (like a date picker or a keyboard with an "@" symbol).

@@ -1,0 +1,165 @@
+Module 9 – Introduction to React.js
+
+## React Introduction
+
+**Question 1: What is React.js? How is it different from other JavaScript frameworks and libraries?**
+React.js is a hugely popular open-source JavaScript library built by Facebook. Its primary purpose is to help developers build interactive User Interfaces (UI) quickly. While a full framework like Angular tries to give you every tool you could ever need for routing, state, and API calls, React is strictly a library focused solely on the "View" layer—just the visual part of your app. This makes React much more flexible, allowing you to plug in whichever extra tools you prefer.
+
+**Question 2: Explain the core principles of React such as the virtual DOM and component-based architecture.**
+React is built on two massive ideas:
+- **Component-Based Architecture:** Instead of building one giant webpage, React encourages you to chop the page up into tiny, isolated, reusable pieces called components (like a `Button` or a `Navbar`). You then stack these pieces together like Lego blocks to build the final app.
+- **The Virtual DOM:** Normally, updating the real HTML DOM is painfully slow. React fixes this by keeping a lightweight "virtual" copy of the DOM in memory. When your data changes, React quickly compares the virtual copy to the real one, figures out exactly what small piece changed, and only updates that tiny section, making it incredibly fast.
+
+**Question 3: What are the advantages of using React.js in web development?**
+Because of the Virtual DOM, React apps are incredibly fast and snappy. Because of the component architecture, code is highly reusable and easy to maintain. React also has a massive ecosystem and community, meaning if you run into a bug or need a tool, someone has likely already solved it. 
+
+## JSX (JavaScript XML)
+
+**Question 1: What is JSX in React.js? Why is it used?**
+JSX stands for JavaScript XML. It is a special syntax that lets you write HTML code directly inside your JavaScript files. React uses it because building user interfaces purely with JavaScript functions (like `document.createElement`) is tedious and ugly. JSX makes your React code look just like standard, readable HTML.
+
+**Question 2: How is JSX different from regular JavaScript? Can you write JavaScript inside JSX?**
+Browsers actually don't understand JSX at all. Before your app runs, a tool called Babel translates your beautiful JSX tags into standard, ugly JavaScript code. And yes! The true power of JSX is that you can inject dynamic JavaScript directly into the HTML structure.
+
+**Question 3: Discuss the importance of using curly braces {} in JSX expressions.**
+Whenever you are writing JSX and suddenly need to do some JavaScript math, or inject a dynamic variable into a paragraph, you use curly braces `{}`. The curly braces tell React: "Hey, stop treating this like static HTML text for a second, and evaluate this as live JavaScript code."
+
+## Components
+
+**Question 1: What are components in React? Explain the difference between functional components and class components.**
+Components are the building blocks of a React app. 
+- **Functional components** are the modern, standard way to write React. They are literally just regular JavaScript functions that return JSX.
+- **Class components** are the older way to write React, using ES6 classes. Before 2019, you *had* to use class components if you wanted your component to have "state" (memory), but today, functional components can do everything classes can do thanks to Hooks.
+
+**Question 2: How do you pass data to a component using props?**
+Props (short for properties) are how we pass data downwards from a parent component to a child component. It looks exactly like adding an attribute in HTML. For example, in the parent, you write `<UserProfile name="John" />`. Inside the `UserProfile` child component, you accept that data via `props.name`. 
+
+**Question 3: What is the role of render() in class components?**
+In older class components, the `render()` method was the mandatory function that React called to figure out what HTML to draw on the screen. It was essentially the only place in a class component where you could return JSX. 
+
+## Props and State
+
+**Question 1: What are props in React.js? How are props different from state?**
+Props are used to pass data from one component down to another. They are strictly read-only; a child component can NEVER modify its own props. 
+State, on the other hand, is a component's internal memory. It holds data that belongs solely to that specific component. Unlike props, state is mutable—the component can update its own state whenever it wants (like keeping track of how many times a button was clicked).
+
+**Question 2: Explain the concept of state in React and how it is used to manage component data.**
+State represents the dynamic data of your app at any given moment in time. When a user interacts with your app (like typing in a search bar), you update the state. The magic of React is that whenever a component's state changes, React automatically re-renders that component to immediately show the new data on the screen.
+
+**Question 3: Why is this.setState() used in class components, and how does it work?**
+In older class components, you couldn't just change state variables directly like `this.state.count = 5`. React wouldn't know you changed it! You had to call `this.setState({ count: 5 })`. This special function updated the data and explicitly told React, "Hey, I changed the data, please re-render the screen."
+
+## Handling Events
+
+**Question 1: How are events handled in React compared to vanilla JavaScript? Explain the concept of synthetic events.**
+In vanilla JS, you might grab an element and use `addEventListener`. In React, you attach the event directly to the JSX element, similar to inline HTML events. However, React uses "Synthetic Events." Because different browsers handle events slightly differently, React intercepts the raw browser event and wraps it in a Synthetic Event wrapper, ensuring the event behaves exactly the same way on Chrome, Safari, and Firefox.
+
+**Question 2: What are some common event handlers in React.js? Provide examples of onClick, onChange, and onSubmit.**
+- `onClick={handleClick}` is used on buttons to trigger an action when clicked.
+- `onChange={handleChange}` is used on text inputs to trigger an action every single time the user types a character.
+- `onSubmit={handleSubmit}` is used on forms to intercept the submit action so you can process the data with JavaScript before sending it to a server.
+
+**Question 3: Why do you need to bind event handlers in class components?**
+In older class components, standard JavaScript functions lose their context (the `this` keyword) when passed as event handlers. If you didn't manually `.bind(this)` in the constructor, clicking a button would crash the app because the function wouldn't know what `this.setState` meant. 
+
+## Conditional Rendering
+
+**Question 1: What is conditional rendering in React? How can you conditionally render elements in a React component?**
+Conditional rendering simply means deciding what UI to show on the screen based on a condition—just like deciding what to wear based on the weather. If a user is logged in, you render a "Log Out" button; if they aren't, you render a "Log In" button.
+
+**Question 2: Explain how if-else, ternary operators, and && (logical AND) are used in JSX for conditional rendering.**
+- **if-else:** You can't use these directly inside JSX tags, so you usually use them above your `return` statement to decide which block of JSX to return.
+- **Ternary operator (`condition ? true : false`):** This is heavily used directly inside JSX to toggle between two things. Example: `{isLoggedIn ? <LogoutBtn /> : <LoginBtn />}`.
+- **Logical AND (`&&`):** Used when you only want to show something if the condition is true, and show nothing if it's false. Example: `{hasError && <p>An error occurred!</p>}`.
+
+## Lists and Keys
+
+**Question 1: How do you render a list of items in React? Why is it important to use keys when rendering lists?**
+You render lists by taking a JavaScript array and using the `.map()` function to loop over it, transforming each piece of data into a JSX element (like turning an array of names into an array of `<li>` tags). When you do this, React requires you to attach a `key` prop to the outer element.
+
+**Question 2: What are keys in React, and what happens if you do not provide a unique key?**
+A key is a unique identifier (usually a database ID). When you map over a list, React uses these keys to keep track of which items were added, changed, or removed. If you don't provide a unique key, React gets confused during updates. It might accidentally re-render the entire list from scratch (which is slow) or worse, mix up the data and display things out of order.
+
+## Forms in React
+
+**Question 1: How do you handle forms in React? Explain the concept of controlled components.**
+React highly recommends using "Controlled Components" for forms. This means React controls the form data completely. Instead of letting the HTML input manage its own text, you link the input's `value` directly to a React state variable, and you use an `onChange` event to update that state every time the user types a single letter. 
+
+**Question 2: What is the difference between controlled and uncontrolled components in React?**
+In a controlled component, React's state is the single source of truth; the input field literally cannot change unless React's state changes first. An uncontrolled component ignores React state entirely; it just lets the DOM handle the typing naturally, and you use a `ref` to scoop the data out of the input only at the very end when the user hits submit.
+
+## Lifecycle Methods & Hooks
+
+**Question 1: What are lifecycle methods in React class components? Describe the phases of a component’s lifecycle.**
+In the old class components, lifecycle methods were special functions that React automatically triggered at different stages of a component's life:
+1. **Mounting:** When the component is first born and injected into the DOM.
+2. **Updating:** When the component's state or props change, causing it to re-render.
+3. **Unmounting:** When the component is destroyed and removed from the DOM.
+
+**Question 2: Explain the purpose of componentDidMount(), componentDidUpdate(), and componentWillUnmount().**
+- `componentDidMount()`: Runs once immediately after the component appears. Great place to fetch data from an API.
+- `componentDidUpdate()`: Runs after every single re-render. Great for checking if specific data changed and reacting to it.
+- `componentWillUnmount()`: Runs right before the component dies. Crucial for cleaning up timers or event listeners so they don't cause memory leaks.
+
+**Question 3: What are React hooks? How do useState() and useEffect() hooks work in functional components?**
+Hooks are modern React's killer feature. They allow simple functional components to "hook into" advanced React features like state and lifecycles without needing to write clunky classes.
+- `useState()` gives a functional component a memory. It returns a variable to hold the data, and a setter function to update it.
+- `useEffect()` is the modern replacement for all the lifecycle methods. It runs side-effects (like fetching data or starting timers) automatically after the component renders.
+
+**Question 4: What problems did hooks solve in React development? Why are hooks considered an important addition to React?**
+Before hooks, class components were confusing (the `this` keyword caused endless bugs), and trying to share stateful logic between different components resulted in "wrapper hell" (components wrapped in components wrapped in components). Hooks completely eliminated classes, massively simplified the code, and made it incredibly easy to extract and share logic across the app.
+
+**Question 5: What is useReducer? How we use in react app?**
+`useReducer` is basically a more advanced version of `useState`. If you have complex state that involves lots of moving parts (like a massive form or a shopping cart), `useState` gets messy. `useReducer` lets you handle complex state updates using a "reducer function", a pattern borrowed from Redux.
+
+**Question 6: What is the purpose of useCallback & useMemo Hooks? What’s the Difference between the useCallback & useMemo Hooks?**
+Both are used purely for performance optimization to stop React from doing unnecessary work.
+- `useMemo` remembers the *result* of a slow, heavy math calculation so it doesn't have to recalculate it on every render.
+- `useCallback` remembers an *actual function* itself, preventing React from creating a brand new, identical function in memory every time the component re-renders.
+
+**Question 7: What is useRef? How to work in react app?**
+`useRef` is like a box that holds a mutable value that *does not* trigger a re-render when it changes. It is most commonly used to grab direct control of an HTML element (like forcefully putting focus on an input field when the page loads).
+
+## Routing in React
+
+**Question 1: What is React Router? How does it handle routing in single-page applications?**
+React Router is the most popular library for adding multiple pages to a React app. React builds Single Page Applications—meaning the browser technically only ever loads one single HTML file. React Router intercepts the URL in the address bar. Instead of asking a server for a new page, it just instantly swaps out the React components on the screen to fake the experience of navigating to a new page.
+
+**Question 2: Explain the difference between BrowserRouter, Route, Link, and Switch components in React Router.**
+- `BrowserRouter`: The giant wrapper you put around your whole app to enable routing.
+- `Route`: Defines a path. It says "If the URL is /about, then show the About component."
+- `Link`: The React version of an `<a>` tag. It changes the URL in the address bar without actually refreshing the browser page.
+- `Switch` (now called `Routes` in v6): Wraps around your Routes and ensures that only one Route renders at a time.
+
+## JSON-server and Firebase
+
+**Question 1: What do you mean by RESTful web services?**
+A RESTful API is a standard way for a frontend app (like React) to communicate with a backend database. It uses standard HTTP methods: GET to retrieve data, POST to create data, PUT/PATCH to update data, and DELETE to remove data. 
+
+**Question 2: What is Json-Server? How we use in React?**
+JSON-Server is a brilliant little tool that lets you create a fake, working backend API in seconds using a simple JSON file. Frontend developers use it to build and test their React apps while the real backend team is still building the actual database.
+
+**Question 3: How do you fetch data from a Json-server API in React? Explain the role of fetch() or axios() in making API requests.**
+You fetch data inside a `useEffect` hook so it happens right when the component loads. `fetch()` is a tool built directly into modern browsers to make HTTP requests. `axios` is a popular third-party library that does the exact same thing but is often preferred because it has a slightly cleaner syntax and automatically converts the data to JSON for you.
+
+**Question 4: What is Firebase? What features does Firebase offer?**
+Firebase is a massive platform owned by Google that provides "Backend-as-a-Service". Instead of building your own backend server and writing database code from scratch, you just plug Firebase into your React app. It gives you a real-time database, robust user authentication (like "Sign in with Google"), file storage, and website hosting right out of the box.
+
+**Question 5: Discuss the importance of handling errors and loading states when working with APIs in React.**
+When asking a server for data over the internet, it takes time. If you don't use a "loading state," the user will just stare at a blank screen and think the app is broken. Showing a loading spinner is crucial for good UX. Similarly, servers sometimes crash or the user loses Wi-Fi. If you don't use a `try-catch` block to handle errors, your app will literally crash. Handling errors gracefully allows you to show a friendly "Please try again later" message instead.
+
+## Context API & State Management
+
+**Question 1: What is the Context API in React? How is it used to manage global state across multiple components? Explain how createContext() and useContext() are used in React for sharing state.**
+Normally in React, if a component deep at the bottom of your app needs data, you have to pass it down manually as props through every single intermediate component in between—a painful problem called "prop drilling". The Context API solves this. 
+- You use `createContext()` to create a global data provider at the very top of your app. 
+- Then, any component anywhere in the app can use the `useContext()` hook to instantly teleport that data directly to itself, bypassing the components in the middle entirely.
+
+**Question 2: What is Redux, and why is it used in React applications? Explain the core concepts of actions, reducers, and the store.**
+Redux is a heavy-duty state management library used for massive enterprise applications where the Context API isn't powerful enough. 
+- **The Store:** A giant, centralized vault that holds all the data for the entire app.
+- **Actions:** Objects that describe *what* you want to do (e.g., `{ type: 'ADD_TO_CART', item: 'Apple' }`).
+- **Reducers:** The strict functions that actually look at the Action and do the math to update the Store. You are never allowed to change the Store directly; you must dispatch an Action to a Reducer.
+
+**Question 3: How does Recoil simplify state management in React compared to Redux?**
+Redux is incredibly powerful but requires a ton of complex setup and boilerplate code. Recoil is a newer, much simpler state management library built specifically for React. Instead of a massive centralized store with actions and reducers, Recoil just uses "Atoms"—tiny, independent pieces of state that components can subscribe to. It feels much more like native React `useState`, making it much easier to learn and implement.

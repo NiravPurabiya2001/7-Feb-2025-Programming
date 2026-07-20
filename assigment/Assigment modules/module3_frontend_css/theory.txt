@@ -1,0 +1,73 @@
+Module 3 – Frontend – CSS and CSS3
+
+## CSS Selectors & Styling
+
+**Question 1: What is a CSS selector? Provide examples of element, class, and ID selectors.**
+A CSS selector is like a targeting system. It tells the browser exactly which HTML elements you want to apply your styles to. 
+- **Element selector:** Targets all elements of a specific type. For example, `p { color: blue; }` makes all paragraphs blue.
+- **Class selector:** Targets elements with a specific class name, denoted by a dot. For example, `.btn { padding: 10px; }` styles anything with `class="btn"`.
+- **ID selector:** Targets one specific, unique element on the page, denoted by a hashtag. For example, `#header { height: 100px; }` styles the element with `id="header"`.
+
+**Question 2: Explain the concept of CSS specificity. How do conflicts between multiple styles get resolved?**
+CSS specificity is the set of rules the browser uses to decide which style wins when multiple conflicting rules target the very same element. It acts like a point system. Inline styles (written directly in the HTML) have the highest points, followed by IDs, then classes, and finally elements. The rule with the highest score always wins. If two rules have the exact same score, the browser applies the one that was written last in your CSS file.
+
+**Question 3: What is the difference between internal, external, and inline CSS? Discuss the advantages and disadvantages of each approach.**
+- **Inline CSS:** Written directly inside the HTML tag using the `style` attribute. It's quick for a tiny fix, but terrible for large projects because it's messy and hard to maintain.
+- **Internal CSS:** Written inside a `<style>` block in the head of an HTML document. It's okay for single-page sites, but you can't reuse those styles on other pages.
+- **External CSS:** Written in a separate `.css` file and linked to the HTML. This is the best approach because it keeps your HTML clean, lets you reuse styles across hundreds of pages, and allows the browser to cache the file so the site loads faster.
+
+## CSS Box Model
+
+**Question 1: Explain the CSS box model and its components (content, padding, border, margin). How does each affect the size of an element?**
+Every element in CSS is essentially a rectangular box made of four layers:
+- **Content:** The actual text or image in the very center.
+- **Padding:** The invisible breathing room inside the box, between the content and the border. Increasing padding makes the box bigger from the inside.
+- **Border:** The visible line wrapping around the padding and content.
+- **Margin:** The invisible space outside the box, pushing it away from other elements on the page.
+
+**Question 2: What is the difference between border-box and content-box box-sizing in CSS? Which is the default?**
+The default is `content-box`. In `content-box`, if you set an element to be 200px wide, and then add 20px of padding and a 5px border, the final box actually becomes 250px wide! This is very frustrating. `border-box` fixes this. If you use `border-box` and set the width to 200px, the padding and border shrink inward, ensuring the final total width never grows past that 200px limit.
+
+## CSS Flexbox
+
+**Question 1: What is CSS Flexbox, and how is it useful for layout design? Explain the terms flex-container and flex-item.**
+Flexbox is a layout tool that makes it incredibly easy to align and distribute space among items in a single row or a single column. It's perfect for centering things and building responsive navigation bars. 
+- A **flex-container** is the parent element where you apply `display: flex;`. 
+- The **flex-items** are the direct children inside that container, which now automatically arrange themselves according to the flex rules.
+
+**Question 2: Describe the properties justify-content, align-items, and flex-direction used in Flexbox.**
+- `flex-direction`: Decides if the items flow in a row (horizontally) or a column (vertically).
+- `justify-content`: Aligns the items along the main direction (e.g., pushing items to the center or spacing them evenly across a row).
+- `align-items`: Aligns the items across the cross direction (e.g., vertically centering items inside a tall row).
+
+## CSS Grid
+
+**Question 1: Explain CSS Grid and how it differs from Flexbox. When would you use Grid over Flexbox?**
+While Flexbox is designed for one-dimensional layouts (a single row OR a single column), CSS Grid is designed for two-dimensional layouts (rows AND columns at the same time). You would use Flexbox for aligning small components like a row of buttons, but you would use CSS Grid to build the overall massive layout of a webpage, defining exactly where the header, sidebar, main content, and footer should sit.
+
+**Question 2: Describe the grid-template-columns, grid-template-rows, and grid-gap properties. Provide examples of how to use them.**
+- `grid-template-columns`: Defines the number and width of vertical columns (e.g., `grid-template-columns: 200px 1fr 200px;` creates a flexible center column between two fixed ones).
+- `grid-template-rows`: Defines the height of horizontal rows (e.g., `grid-template-rows: 100px auto;`).
+- `grid-gap` (or just `gap`): Creates empty space or "gutters" between the grid cells so they don't touch each other (e.g., `gap: 20px;`).
+
+## Responsive Web Design with Media Queries
+
+**Question 1: What are media queries in CSS, and why are they important for responsive design?**
+Media queries are CSS rules that only turn on when certain conditions are met, usually based on the user's screen size. They are the backbone of responsive design, allowing you to have a single website that automatically restructures itself to look perfect on a giant desktop monitor, a tablet, or a tiny mobile phone.
+
+**Question 2: Write a basic media query that adjusts the font size of a webpage for screens smaller than 600px**
+```css
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+```
+
+## Typography and Web Fonts
+
+**Question 1: Explain the difference between web-safe fonts and custom web fonts. Why might you use a web-safe font over a custom font?**
+Web-safe fonts (like Arial or Times New Roman) are pre-installed on almost every computer in the world. They load instantly because nothing needs to be downloaded, making them incredibly fast and reliable. Custom web fonts (like those from Google Fonts) must be downloaded by the browser when the user visits the site. They look beautiful and unique but can slightly slow down the page load.
+
+**Question 2: What is the font-family property in CSS? How do you apply a custom Google Font to a webpage?**
+The `font-family` property tells the browser which font to use for your text. To apply a Google Font, you first paste a `<link>` tag provided by Google into the `<head>` of your HTML document to download the font. Then, you simply apply it in your CSS like this: `body { font-family: 'Open Sans', sans-serif; }`.

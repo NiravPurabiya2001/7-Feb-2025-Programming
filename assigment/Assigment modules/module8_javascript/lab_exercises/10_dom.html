@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Lab 10 – DOM Manipulation</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 20px; padding: 24px; }
+    h1 { color: #60a5fa; font-size: 1.6rem; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 32px 40px; max-width: 480px; width: 100%; text-align: center; display: flex; flex-direction: column; gap: 16px; }
+    #myParagraph { font-size: 1.1rem; padding: 16px; background: #0f172a; border-radius: 8px; border: 1px solid #334155; transition: color 0.4s, background 0.4s; }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    button { padding: 10px 22px; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: transform 0.15s, opacity 0.15s; }
+    button:hover { opacity: 0.85; transform: translateY(-2px); }
+    #btn-change-text { background: #3b82f6; color: white; }
+    #btn-change-color { background: #8b5cf6; color: white; }
+    #btn-add-element { background: #22c55e; color: white; }
+    #btn-remove-element { background: #ef4444; color: white; }
+    #btn-toggle-class { background: #f59e0b; color: white; }
+    #btn-reset { background: #475569; color: white; }
+    #dynamicList { list-style: none; text-align: left; padding: 0; }
+    #dynamicList li { background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 8px 14px; margin-bottom: 6px; font-size: 0.88rem; }
+    .highlighted { background: #1e3a5f !important; color: #60a5fa !important; border-color: #3b82f6 !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>DOM Manipulation Lab</h1>
+
+    <!-- Task: paragraph that starts with "Hello, World!" -->
+    <p id="myParagraph">Hello, World!</p>
+
+    <div class="btn-row">
+      <button id="btn-change-text">Change Text</button>
+      <button id="btn-change-color">Change Color</button>
+      <button id="btn-add-element">Add List Item</button>
+      <button id="btn-remove-element">Remove Last Item</button>
+      <button id="btn-toggle-class">Toggle Highlight</button>
+      <button id="btn-reset">Reset</button>
+    </div>
+
+    <ul id="dynamicList"></ul>
+  </div>
+
+  <script>
+    // ── DOM Selection ─────────────────────────────────────────────────────
+    const para = document.getElementById('myParagraph');             // by ID
+    const btnChangeText   = document.getElementById('btn-change-text');
+    const btnChangeColor  = document.getElementById('btn-change-color');
+    const btnAddElement   = document.getElementById('btn-add-element');
+    const btnRemoveElement= document.getElementById('btn-remove-element');
+    const btnToggleClass  = document.getElementById('btn-toggle-class');
+    const btnReset        = document.getElementById('btn-reset');
+    const dynamicList     = document.querySelector('#dynamicList');   // by CSS selector
+
+    const items = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Git'];
+    let itemIndex = 0;
+
+    // ── Task: Change text ─────────────────────────────────────────────────
+    btnChangeText.addEventListener('click', () => {
+      para.textContent = 'JavaScript is fun!';
+    });
+
+    // ── Task: Change color to blue ────────────────────────────────────────
+    btnChangeColor.addEventListener('click', () => {
+      para.style.color = '#60a5fa';
+    });
+
+    // ── Bonus: Add list item dynamically ──────────────────────────────────
+    btnAddElement.addEventListener('click', () => {
+      if (itemIndex < items.length) {
+        const li = document.createElement('li');     // create element
+        li.textContent = `${itemIndex + 1}. ${items[itemIndex]}`;
+        li.id = `item-${itemIndex}`;
+        dynamicList.appendChild(li);                 // append to DOM
+        itemIndex++;
+      }
+    });
+
+    // ── Bonus: Remove last list item ──────────────────────────────────────
+    btnRemoveElement.addEventListener('click', () => {
+      const lastChild = dynamicList.lastElementChild;
+      if (lastChild) {
+        dynamicList.removeChild(lastChild);          // remove from DOM
+        itemIndex--;
+      }
+    });
+
+    // ── Bonus: Toggle CSS class on paragraph ──────────────────────────────
+    btnToggleClass.addEventListener('click', () => {
+      para.classList.toggle('highlighted');          // toggle class
+    });
+
+    // ── Bonus: Reset paragraph to original state ──────────────────────────
+    btnReset.addEventListener('click', () => {
+      para.textContent = 'Hello, World!';
+      para.style.color = '';
+      para.classList.remove('highlighted');
+    });
+
+    /* ── DOM Selection methods used in this lab:
+       - document.getElementById()         – selects by unique ID
+       - document.querySelector()          – selects by CSS selector (first match)
+       - document.createElement()          – creates a new element
+       - element.appendChild()             – adds child to parent
+       - element.removeChild()             – removes a child element
+       - element.textContent               – reads/writes text content
+       - element.style.color               – modifies inline CSS
+       - element.classList.toggle()        – toggles a CSS class
+    */
+  </script>
+
+</body>
+</html>

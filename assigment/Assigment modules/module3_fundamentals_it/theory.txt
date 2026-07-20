@@ -1,0 +1,73 @@
+Module 3 – Fundamentals of IT
+
+**Explain in your own words what a program is and how it functions. What is Programming?**
+A program is essentially a recipe for a computer. It's a specific set of instructions written in a language the computer can understand, telling it exactly how to perform a task, whether that's calculating math or running a video game. Programming is the creative and logical process of designing, writing, testing, and fixing those instructions.
+
+**What are the key steps involved in the programming process?**
+The process usually starts with understanding the problem and planning an algorithm or flow of logic. Next comes coding, where the developer actually writes the instructions in a language like Python or Java. Then comes testing to find and fix bugs. Finally, the code is deployed and maintained over time.
+
+**What are the main differences between high-level and low-level programming languages?**
+High-level languages (like Python or JavaScript) are designed to be easy for humans to read and write, using English-like words. They are portable across different machines but need to be translated before running. Low-level languages (like Assembly or Machine Code) are incredibly difficult for humans to read because they are closer to the raw binary hardware, but they run blazingly fast because they talk directly to the machine's processor.
+
+**Describe the roles of the client and server in web communication. Explain Client Server Communication.**
+In web communication, the "client" is your web browser or app. It acts like a customer in a restaurant, asking for something. The "server" is a powerful computer living somewhere on the internet that stores the website's files. It acts like the chef, processing the client's request and sending the requested webpage or data back to the client.
+
+**Explain the function of the TCP/IP model and its layers.**
+The TCP/IP model is the foundational framework that allows the entire internet to communicate. It breaks data transmission down into four layers: the physical Network Access layer (the cables), the Internet layer (routing data via IP addresses), the Transport layer (ensuring the data arrives completely via TCP), and the Application layer (the protocols we interact with, like HTTP for web browsing).
+
+**How does broadband differ from fiber-optic internet?**
+Broadband (like DSL or cable) uses older copper wires to send electrical signals, which is affordable and widespread but can suffer from slower speeds and interference. Fiber-optic internet uses hair-thin strands of glass to transmit data as flashes of light, resulting in incredibly fast, reliable, and high-capacity connections.
+
+**What are the differences between HTTP and HTTPS protocols? What is the role of encryption in securing application?**
+HTTP is the standard way data is sent over the web, but it sends data as plain text, meaning a hacker could easily read it if they intercept it. HTTPS solves this by adding an encryption layer (TLS/SSL). Encryption scrambles the data into unreadable gibberish while it travels across the internet, ensuring that sensitive info like passwords and credit card numbers remain completely secure.
+
+**What is the difference between system software and application software?**
+System software runs in the background to manage the hardware itself—think of Operating Systems like Windows, macOS, or Android. Application software sits on top of the system software and performs specific tasks for the user—like Google Chrome for browsing, or Microsoft Word for writing.
+
+**What are the differences between open-source and proprietary software?**
+Open-source software is usually free, and its source code is publicly available for anyone to view, modify, and improve (like Linux). Proprietary software is owned by a company, usually costs money, and its source code is kept strictly secret so you cannot modify it (like Microsoft Office).
+
+**What is the significance of modularity in software architecture? Why are layers important in software architecture?**
+Modularity and layers mean breaking a massive, complex software system down into smaller, independent, manageable pieces. If a system is layered (like separating the database code from the user interface code), it makes the software much easier to test, update, and fix. If one piece breaks, you can fix it without accidentally ruining the rest of the application.
+
+**Explain the importance of a development environment in software production.**
+A development environment is a safe, local workspace on a programmer's computer. It allows them to write code, experiment, and break things without affecting the live "production" version of the software that real customers are currently using.
+
+**What is the difference between source code and machine code?**
+Source code is the human-readable text that developers write using programming languages (like Java or Python). Machine code is the raw, unreadable binary code (1s and 0s) that the computer's processor actually executes. Compilers translate source code into machine code.
+
+**Why is version control important in software development? How does GIT improve collaboration in a software development team?**
+Version control acts like a time machine for your code. It tracks every single change made to the files. Git is the most popular version control system. It vastly improves collaboration because it allows multiple developers to work on the exact same project at the same time without overwriting each other's work. If a bug is introduced, they can simply revert the code back to an older, working version.
+
+**What are the benefits of using Github for students?**
+GitHub is a platform that hosts Git repositories online. For students, it serves as a powerful portfolio to show future employers the actual code they've written. It also provides free tools through the GitHub Student Developer Pack and allows students to collaborate on group projects easily.
+
+**What is the role of application software in businesses?**
+Application software heavily automates and streamlines business operations. Tools for accounting, customer relationship management (CRM), and communication (like Slack) drastically improve productivity, reduce human error, and save companies time and money.
+
+**What are the main stages of the software development process? (SDLC)**
+The process generally follows these stages: 
+1. Planning & Requirements: Figuring out what to build.
+2. Design: Planning the architecture and user interface.
+3. Development: Actually writing the code.
+4. Testing: Finding and fixing bugs.
+5. Deployment: Releasing it to users.
+6. Maintenance: Providing updates and support.
+
+**Why is the requirement analysis phase critical in software development? What is the role of software analysis in the development process?**
+Requirement analysis is critical because if you don't fully understand what the client actually needs, you might spend months building the wrong thing. It sets clear goals and prevents incredibly expensive changes and miscommunications later in the project.
+
+**What are the key elements of system design? What is the significance of DFDs in system analysis? How do flowcharts help in programming and system design?**
+System design involves planning the database structure, the server architecture, and the flow of data. Data Flow Diagrams (DFDs) are significant because they visually map out exactly how information enters, moves through, and leaves the system. Flowcharts help programmers by visually mapping out the logical steps (like "if this happens, do that") before they write a single line of complex code.
+
+**Why is software testing important? What types of software maintenance are there?**
+Testing is vital to ensure the software is secure, reliable, and actually works as expected. Catching bugs early saves money and protects the company's reputation. Once released, software requires maintenance: corrective maintenance to fix newly discovered bugs, and adaptive maintenance to add new features or keep up with new operating systems.
+
+**What are the key differences between web and desktop applications? What are the pros and cons of desktop applications compared to web applications? What are the advantages of using web applications over desktop applications?**
+Desktop applications must be downloaded and installed on a specific operating system (like Windows or Mac). Their pro is that they often run faster and can access computer hardware directly, but their con is that they require manual updates and take up hard drive space. Web applications run directly inside a web browser. Their massive advantage is that they require no installation, work instantly on any device (phone, tablet, Mac, PC), and are updated automatically for everyone on the server side.
+
+**What are the differences between native and hybrid mobile apps?**
+Native apps are built specifically for one platform (like Swift for iOS or Kotlin for Android) resulting in the best possible performance and hardware access. Hybrid apps use web technologies (like HTML/JS or React Native) to write the code once and release it on both iOS and Android simultaneously, saving a lot of time and money but sometimes sacrificing a bit of performance.
+
+**What role does UI/UX design play in application development?**
+UI (User Interface) handles the visual look and feel—the colors, typography, and buttons. UX (User Experience) handles the psychological flow—ensuring the app is intuitive, logical, and satisfying to use. Good UI/UX is critical; if an app is confusing or ugly, users will simply uninstall it, regardless of how good the underlying code is.

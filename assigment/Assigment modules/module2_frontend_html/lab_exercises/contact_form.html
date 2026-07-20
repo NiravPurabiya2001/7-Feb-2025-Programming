@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Form – HTML Forms Lab</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #eef2f7; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 30px; }
+    .form-wrapper { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 560px; }
+    h1 { font-size: 1.6rem; color: #2c3e50; margin-bottom: 6px; }
+    .subtitle { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-weight: 600; color: #34495e; margin-bottom: 6px; font-size: 0.9rem; }
+    input, select, textarea { width: 100%; padding: 10px 14px; border: 1.5px solid #cdd5df; border-radius: 6px; font-size: 0.95rem; color: #333; transition: border-color 0.2s; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: #3498db; box-shadow: 0 0 0 3px rgba(52,152,219,0.15); }
+    textarea { resize: vertical; min-height: 120px; font-family: inherit; }
+    .btn-submit { width: 100%; background: #2980b9; color: white; border: none; padding: 13px; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+    .btn-submit:hover { background: #1a6fa0; }
+    .error-hint { font-size: 0.8rem; color: #e74c3c; margin-top: 4px; display: none; }
+    input:invalid:not(:placeholder-shown) ~ .error-hint { display: block; }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <h1>Contact Us</h1>
+    <p class="subtitle">Fill in the form below and we'll get back to you shortly.</p>
+
+    <form action="#" method="POST" novalidate>
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name <span style="color:#e74c3c">*</span></label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="e.g. John Doe"
+          required
+          minlength="3"
+          maxlength="60"
+          pattern="[A-Za-z\s]+"
+        />
+        <span class="error-hint">Please enter a valid name (letters only, min 3 characters).</span>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address <span style="color:#e74c3c">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="e.g. john@example.com"
+          required
+        />
+        <span class="error-hint">Please enter a valid email address.</span>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone">Phone Number <span style="color:#e74c3c">*</span></label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="e.g. +91 9876543210"
+          required
+          pattern="[+]?[0-9\s\-]{7,15}"
+          maxlength="15"
+        />
+        <span class="error-hint">Please enter a valid phone number (7–15 digits).</span>
+      </div>
+
+      <!-- Subject Dropdown -->
+      <div class="form-group">
+        <label for="subject">Subject <span style="color:#e74c3c">*</span></label>
+        <select id="subject" name="subject" required>
+          <option value="" disabled selected>-- Select a subject --</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Technical Support</option>
+          <option value="billing">Billing & Payments</option>
+          <option value="partnership">Partnership / Collaboration</option>
+          <option value="feedback">Feedback</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Message Textarea -->
+      <div class="form-group">
+        <label for="message">Message <span style="color:#e74c3c">*</span></label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message here..."
+          required
+          minlength="20"
+          maxlength="1000"
+        ></textarea>
+        <span class="error-hint">Message must be at least 20 characters long.</span>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-submit">Send Message</button>
+
+    </form>
+  </div>
+
+</body>
+</html>

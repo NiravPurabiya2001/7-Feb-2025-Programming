@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name: "nirav",
+            age:21
+        }
+        console.log(person.name)
+
+        for(let data in person)
+        {
+            document.write(data)
+            document.write(person[data])
+        }
+
+
+        let name = {
+            abc:"nirav",
+            age : {
+                subject : "wd",
+
+            }
+        }
+        document.write(name.age.subject)
+    </script>
+</body>
+</html>

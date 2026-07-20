@@ -1,0 +1,40 @@
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    
+
+}
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+   
+
+}
+.logo{
+    height: 50px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.banner{
+    background-image: url("/IMAGES/banner.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.football{
+    background-image: url(/IMAGES/Football_346e1817-7808-4ec3-8e79-32dc39e1456f.webp);
+}
+.head{
+    margin-top: 120px;
+}
+.black{
+    background-color: black;
+}
+.new h3 {
+    font-size: 40px;
+}
+
+

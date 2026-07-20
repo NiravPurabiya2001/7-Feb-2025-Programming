@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Lab 09 – Events</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 20px; }
+    h1 { font-size: 1.6rem; color: #60a5fa; }
+    button { padding: 14px 40px; font-size: 1rem; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+    #alertBtn { background: #3b82f6; color: white; }
+    #alertBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(59,130,246,0.4); }
+    #colorBtn { background: #8b5cf6; color: white; }
+    #colorBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(139,92,246,0.4); }
+    #status { font-size: 0.95rem; color: #64748b; transition: color 0.3s; }
+    .card { background: #1e293b; padding: 32px 40px; border-radius: 12px; text-align: center; border: 1px solid #334155; display: flex; flex-direction: column; gap: 14px; min-width: 320px; }
+    #hoverBox { background: #1e293b; border: 2px dashed #334155; border-radius: 8px; padding: 16px; text-align: center; font-size: 0.9rem; color: #64748b; cursor: default; transition: background 0.3s, border-color 0.3s; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>JavaScript Events Lab</h1>
+
+    <!-- Task: Button click → alert -->
+    <button id="alertBtn">Click Me!</button>
+
+    <!-- Bonus: color change on click -->
+    <button id="colorBtn">Change Background Color</button>
+
+    <!-- Hover event demo -->
+    <div id="hoverBox">Hover over me to see a mouseover event!</div>
+
+    <p id="status">Waiting for events...</p>
+  </div>
+
+  <script>
+    const alertBtn = document.getElementById('alertBtn');
+    const colorBtn = document.getElementById('colorBtn');
+    const hoverBox = document.getElementById('hoverBox');
+    const status = document.getElementById('status');
+
+    const colors = ['#1a1a2e', '#0f172a', '#0d1b2a', '#1a0533', '#06011a'];
+    let colorIndex = 0;
+
+    // ── Task: Click event with addEventListener ────────────────────────────
+    alertBtn.addEventListener('click', function(event) {
+      alert('Button clicked!');
+      status.textContent = `Button clicked at ${new Date().toLocaleTimeString()}`;
+      status.style.color = '#22c55e';
+    });
+
+    // ── Bonus: Change background color on click ────────────────────────────
+    colorBtn.addEventListener('click', (e) => {
+      colorIndex = (colorIndex + 1) % colors.length;
+      document.body.style.background = colors[colorIndex];
+      status.textContent = `Background changed to ${colors[colorIndex]}`;
+      status.style.color = '#f59e0b';
+    });
+
+    // ── Bonus: Mouseover / Mouseout events ────────────────────────────────
+    hoverBox.addEventListener('mouseover', () => {
+      hoverBox.style.background = '#2d3748';
+      hoverBox.style.borderColor = '#60a5fa';
+      hoverBox.style.color = '#60a5fa';
+      hoverBox.textContent = '✨ mouseover event fired!';
+    });
+
+    hoverBox.addEventListener('mouseout', () => {
+      hoverBox.style.background = '#1e293b';
+      hoverBox.style.borderColor = '#334155';
+      hoverBox.style.color = '#64748b';
+      hoverBox.textContent = 'Hover over me to see a mouseover event!';
+    });
+
+    // ── Keyboard event ────────────────────────────────────────────────────
+    document.addEventListener('keydown', (e) => {
+      status.textContent = `Key pressed: "${e.key}" (code: ${e.code})`;
+      status.style.color = '#a78bfa';
+    });
+  </script>
+
+</body>
+</html>

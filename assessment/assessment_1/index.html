@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form action="#" method="post" class="registration-form" onsubmit="return validateForm()">
+            <!-- Student Name Field -->
+            <div class="form-group">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" name="studentName" placeholder="Enter your name" 
+                       pattern="[A-Za-z]{3,6}" title="Name must be between 3 and 6 letters only" required>
+            </div>
+            
+            <!-- Mobile Field -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter 10 digit mobile number" 
+                       pattern="[0-9]{10}" title="Mobile must be exactly 10 digits" required>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Simple JS to ensure form fields are not empty (though HTML5 required does this) -->
+    <script>
+        function validateForm() {
+            var name = document.getElementById('studentName').value;
+            var mobile = document.getElementById('mobile').value;
+            
+            if (name.trim() === '' || mobile.trim() === '') {
+                alert("Fields cannot be empty.");
+                return false;
+            }
+            
+            console.log("Form Submitted Successfully");
+            console.log("Name: " + name);
+            console.log("Mobile: " + mobile);
+            return true;
+        }
+    </script>
+</body>
+</html>

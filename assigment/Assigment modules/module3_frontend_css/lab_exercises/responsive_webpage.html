@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Webpage – Media Queries Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: #1e293b; background: #f8fafc; }
+
+    /* ── NAVIGATION BAR ──────────────────────────────────── */
+    nav {
+      background: #0f172a;
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo { color: white; font-size: 1.2rem; font-weight: 700; }
+    .nav-logo span { color: #60a5fa; }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: white; }
+
+    /* Hamburger (hidden on desktop) */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO SECTION ────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; color: #94a3b8; max-width: 540px; margin: 0 auto 28px; line-height: 1.7; }
+    .hero-btn {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-btn:hover { background: #2563eb; transform: translateY(-2px); }
+
+    /* ── CONTENT SECTION ─────────────────────────────────── */
+    .content-wrapper {
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 0 24px;
+    }
+
+    .section-title { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 24px; text-align: center; }
+
+    /* Two-column layout */
+    .two-col {
+      display: flex;
+      gap: 28px;
+    }
+
+    .col {
+      flex: 1;
+      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .col h2 { font-size: 1.15rem; font-weight: 700; color: #0f172a; margin-bottom: 12px; }
+    .col p { font-size: 0.92rem; color: #475569; line-height: 1.7; margin-bottom: 12px; }
+    .col ul { list-style: none; padding: 0; }
+    .col ul li { font-size: 0.9rem; color: #475569; padding: 6px 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 8px; }
+    .col ul li::before { content: "→"; color: #3b82f6; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: #0f172a;
+      color: #475569;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+    }
+
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
+    footer a { color: #64748b; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
+
+    /* ─────────────────────────────────────────────────────────
+       MEDIA QUERIES – RESPONSIVE DESIGN
+    ───────────────────────────────────────────────────────── */
+
+    /* Tablet (≤ 900px) */
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.2rem; }
+      .two-col { gap: 18px; }
+    }
+
+    /* Mobile (≤ 768px) – stack columns vertically */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hero */
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 0.95rem; }
+
+      /* Stack columns vertically */
+      .two-col {
+        flex-direction: column;
+      }
+
+      /* Content */
+      .content-wrapper { margin: 32px auto; }
+    }
+
+    /* Small mobile (≤ 480px) */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 0.88rem; }
+      .hero-btn { padding: 12px 24px; font-size: 0.9rem; }
+      .col { padding: 20px; }
+      .col h2 { font-size: 1rem; }
+      .col p { font-size: 0.85rem; }
+
+      /* Adjust font sizes for readability on small screens */
+      body { font-size: 14px; }
+      .section-title { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-logo">Resp<span>onsive</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Responsive Web Design<br/>with Media Queries</h1>
+    <p>This page demonstrates how media queries make a webpage adapt beautifully across all screen sizes — from widescreen monitors to small mobile phones.</p>
+    <a href="#content" class="hero-btn">Explore Content ↓</a>
+  </section>
+
+  <!-- Two-Column Content Section -->
+  <div class="content-wrapper" id="content">
+    <h2 class="section-title">Why Responsive Design Matters</h2>
+    <div class="two-col">
+
+      <!-- Column 1 -->
+      <div class="col">
+        <h2>📱 Mobile-First Approach</h2>
+        <p>Over 60% of global web traffic comes from mobile devices. A responsive website ensures all users get a great experience regardless of their screen size.</p>
+        <p>Media queries allow you to apply different CSS rules at different screen widths using the <code>@media</code> rule.</p>
+        <ul>
+          <li>Improves user experience on all devices</li>
+          <li>Boosts SEO – Google prefers mobile-friendly sites</li>
+          <li>Reduces bounce rate on mobile</li>
+          <li>One codebase for all screen sizes</li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col">
+        <h2>🖥️ Breakpoints Used Here</h2>
+        <p>This page uses the following responsive breakpoints:</p>
+        <ul>
+          <li>Default: Full desktop layout (2 columns)</li>
+          <li>≤ 900px: Tablet – reduced gaps</li>
+          <li>≤ 768px: Mobile – stacked columns, hidden nav</li>
+          <li>≤ 480px: Small phone – smaller fonts & padding</li>
+        </ul>
+        <p>Resize your browser window to see the layout change dynamically!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Contact</a>
+    </div>
+    <p>© 2024 Responsive Design Lab – CSS Module 3</p>
+  </footer>
+
+</body>
+</html>

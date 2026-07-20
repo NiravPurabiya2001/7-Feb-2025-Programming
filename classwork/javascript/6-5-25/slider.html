@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/car.webp" alt="" height="600px" width="100%" id="img">
+    <button onclick="back()">PREVIOUS</button>
+    <button onclick="slider()">NEXT</button>
+
+    <script>
+        let image_tag = document.getElementById("img")
+
+        function slider()
+        {
+            if(image_tag.src.match("/car.webp"))
+            {
+                image_tag.src = "/car1.avif"
+            }
+            else if (image_tag.src.match("/car1.avif"))
+            {
+                image_tag.src = "/car2.avif"
+            }
+            
+        }
+        function back()
+        {
+            if(image_tag.src.match("/car2.avif"))
+            {
+                image_tag.src = "/car1.avif"
+            }
+            else if(image_tag.src.match("/car1.avif"))
+            {
+               image_tag.src = "/car.webp"
+            }
+        }
+
+
+    </script>
+</body>
+</html>
